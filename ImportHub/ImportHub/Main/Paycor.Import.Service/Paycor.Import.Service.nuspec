@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Paycor.Import.Service</id>
+    <title>Paycor.Import.Service</title>
+    <version>$version$</version>
+    <authors>Paycor</authors>
+    <description>The public api for the Import Service</description>
+  </metadata>
+</package>

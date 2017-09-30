@@ -1,0 +1,249 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "ImportHub Reference API Services (version 1)",
+    "description": "A sample API used to demonstrate integration with the ImportHub and team research. Uses in memory repository.",
+    "contact": {
+      "name": "Alan Pimm",
+      "email": "apimm@paycor.com"
+    }
+  },
+  "host": "localhost:8083",
+  "schemes": [ "http" ],
+  "paths": {
+    "/import/referenceapi/v1/gamecatalog/games": {
+      "get": {
+        "tags": [ "GameController" ],
+        "summary": "Gets the list of all games in the repository.",
+        "operationId": "GameController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": { "200": { "description": "OK" } },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "GameController" ],
+        "summary": "Adds a new instance of Game to the repository.",
+        "operationId": "GameController_PostBy_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "game",
+            "in": "body",
+            "description": "the game to add",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.Game" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "201": { "description": "Created" },
+          "400": { "description": "BadRequest" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v1/gamecatalog/games/{id}": {
+      "get": {
+        "tags": [ "GameController" ],
+        "summary": "Gets a the specified game from the repository.",
+        "operationId": "GameController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "the id of the game to retrieve",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "404": { "description": "NotFound" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "GameController" ],
+        "summary": "Updates the specified game in the repository.",
+        "operationId": "GameController_PutBy_id_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Model.Game} to update.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "game",
+            "in": "body",
+            "description": "The updated game",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.Game" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "GameController" ],
+        "summary": "Deletes the specified game in the repository.",
+        "operationId": "GameController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Model.Game} to delete.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "410": { "description": "Gone" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v1/gamecatalog/gamesTitles": {
+      "post": {
+        "tags": [ "GameController" ],
+        "summary": "Updates the specified game in the repository.",
+        "operationId": "GameController_PostBy_myArray",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "myArray",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/ImportHub.ReferenceApi.Service.Controllers.v1.GameController.IdTitle" }
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v1/gamecatalog/{gameid}/games": {
+      "post": {
+        "tags": [ "GameController" ],
+        "operationId": "GameController_PostBy_gameid_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "gameid",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "game",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.Game" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    }
+  },
+  "definitions": {
+    "ImportHub.ReferenceApi.Model.Game": {
+      "required": [ "title", "publisher" ],
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "title": {
+          "maxLength": 15,
+          "minLength": 0,
+          "type": "string"
+        },
+        "genre": {
+          "format": "int32",
+          "enum": [ 0, 1, 2, 3, 4, 5, 6 ],
+          "type": "integer"
+        },
+        "publisher": {
+          "maxLength": 10,
+          "minLength": 0,
+          "type": "string"
+        },
+        "rating": {
+          "format": "int32",
+          "enum": [ 1, 2, 3, 4, 5 ],
+          "type": "integer"
+        },
+        "retailPrice": {
+          "format": "double",
+          "maximum": 65,
+          "minimum": 5,
+          "type": "number"
+        },
+        "publishDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "clientId": { "type": "string" }
+      },
+      "x-mapType": "Game (V1)",
+      "x-mapCategory": "Game Catalog"
+    },
+    "System.Object": {
+      "type": "object",
+      "properties": { },
+      "x-mapType": "Object",
+      "x-mapCategory": "Uncategorized"
+    },
+    "ImportHub.ReferenceApi.Service.Controllers.v1.GameController.IdTitle": {
+      "required": [ "id", "title" ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "title": { "type": "string" }
+      },
+      "x-mapType": "IdTitle",
+      "x-mapCategory": "Uncategorized"
+    }
+  }
+}

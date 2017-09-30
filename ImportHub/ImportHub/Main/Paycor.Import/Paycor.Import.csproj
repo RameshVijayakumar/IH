@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Paycor.Import</RootNamespace>
+    <AssemblyName>Paycor.Import</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.0.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="LINQtoCSV, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LINQtoCSV.1.5.0.0\lib\net35\LINQtoCSV.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=1.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.DocumentDB.1.9.2\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.1\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.7.1.2\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MoreLinq, Version=1.4.18916.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.1.4.0\lib\net35\MoreLinq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Import.Status, Version=1.0.6054.26732, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Import.Status.1.0.6054.26732\lib\Paycor.Import.Status.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Import.Status.Azure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Import.Status.1.0.6054.26732\lib\Paycor.Import.Status.Azure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Messaging.Contract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Messaging.Contract.1.0.0.13\lib\Paycor.Messaging.Contract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Notifications, Version=1.1.6093.26468, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Integration.Notifications.1.1.6093.26468\lib\Paycor.Notifications.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Notifications.Processors, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Integration.Notifications.1.1.6093.26468\lib\Paycor.Notifications.Processors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Notifications.Provider, Version=1.1.6093.26468, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Integration.Notifications.1.1.6093.26468\lib\Paycor.Notifications.Provider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Paycor.Security, Version=1.4.6379.16553, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paycor.Security.1.4.6379.16553\lib\Paycor.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter\Exporter.cs" />
+    <Compile Include="Adapter\ExporterEventArgs.cs" />
+    <Compile Include="Adapter\IExporter.cs" />
+    <Compile Include="Adapter\IImporter.cs" />
+    <Compile Include="Adapter\Importer.cs" />
+    <Compile Include="Adapter\ImporterEventArgs.cs" />
+    <Compile Include="Adapter\ITranslationManager.cs" />
+    <Compile Include="Adapter\ITranslationWorker.cs" />
+    <Compile Include="Adapter\ITranslator.cs" />
+    <Compile Include="Adapter\TranslationManager.cs" />
+    <Compile Include="Adapter\TranslationWorker.cs" />
+    <Compile Include="Adapter\Translator.cs" />
+    <Compile Include="Adapter\TranslatorEventArgs.cs" />
+    <Compile Include="Attributes\RolesAuthorizeAttribute.cs" />
+    <Compile Include="BadRequestImportException.cs" />
+    <Compile Include="CookieResolver.cs" />
+    <Compile Include="CsvContent.cs" />
+    <Compile Include="Ensure.cs" />
+    <Compile Include="ExporterResult.cs" />
+    <Compile Include="Extensions\ApiControllerExtensions.cs" />
+    <Compile Include="Extensions\ApiMappingExtensions.cs" />
+    <Compile Include="Extensions\ApiRecordExtensions.cs" />
+    <Compile Include="Extensions\ClientMappingExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\ApiRecordCollectionExtensions.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\GeneratedMappingExtensions.cs" />
+    <Compile Include="Extensions\HtmlVerbExtensions.cs" />
+    <Compile Include="Extensions\HttpClientExtensions.cs" />
+    <Compile Include="Extensions\HttpExporterResultExtensions.cs" />
+    <Compile Include="Extensions\KeyValuePairExtensions.cs" />
+    <Compile Include="Extensions\MappingDefinitionExtensions.cs" />
+    <Compile Include="Extensions\MappingEndpointsExtensions.cs" />
+    <Compile Include="Extensions\MappingFieldDefinitionExtensions.cs" />
+    <Compile Include="Extensions\JTokenExtensions.cs" />
+    <Compile Include="Extensions\SchemaExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\SwaggerDocumentDefinitionExtensions.cs" />
+    <Compile Include="FailedRecordFormatter\ExcelToCsvConverter.cs" />
+    <Compile Include="FailedRecordFormatter\FailedRecord.cs" />
+    <Compile Include="FailedRecordFormatter\IExcelToCsv.cs" />
+    <Compile Include="FailedRecordFormatter\IXlsxRecordFormatter.cs" />
+    <Compile Include="FailedRecordFormatter\IXlsxHeaderWriter.cs" />
+    <Compile Include="FailedRecordFormatter\IXlsxRecordWriter.cs" />
+    <Compile Include="FailedRecordFormatter\XlsxFailedRecordFormatter.cs" />
+    <Compile Include="FailedRecordFormatter\XlsxHeaderWriter.cs" />
+    <Compile Include="FailedRecordFormatter\XlsxMappingTemplate.cs" />
+    <Compile Include="FailedRecordFormatter\XlsxRecordWriter.cs" />
+    <Compile Include="FileDataExtracter\LegacyShim\IFileDataExtracter.cs" />
+    <Compile Include="FileDataExtracter\LegacyShim\IFileDataExtracterFactory.cs" />
+    <Compile Include="FileDataExtracter\LegacyShim\IProvideSheetData.cs" />
+    <Compile Include="FileType\ApiBasedAlgorithm.cs" />
+    <Compile Include="FileType\BaseFileTypeHandlerFactory.cs" />
+    <Compile Include="FileType\BaseRelevanceAlgorithm.cs" />
+    <Compile Include="FileType\EeFileTypeInfo.cs" />
+    <Compile Include="FileType\Enums.cs" />
+    <Compile Include="FileType\FileAndApiBasedAlgorithm.cs" />
+    <Compile Include="FileType\FileBasedAlgorithm.cs" />
+    <Compile Include="FileType\FileTypeInfo.cs" />
+    <Compile Include="FileType\FileTypeRecognizer.cs" />
+    <Compile Include="FileType\IEeFileTypeInfo.cs" />
+    <Compile Include="FileType\IFileTypeHandler.cs" />
+    <Compile Include="FileType\IFileTypeInfo.cs" />
+    <Compile Include="FileType\IMappedFileTypeInfo.cs" />
+    <Compile Include="FileType\IRelevanceAlgorithm.cs" />
+    <Compile Include="FileType\LegacyAlgorithm.cs" />
+    <Compile Include="FileType\MappedFileTypeInfo.cs" />
+    <Compile Include="FileType\RelevanceAlgorithmFactory.cs" />
+    <Compile Include="Http\HttpClientSingleton.cs" />
+    <Compile Include="Http\HttpExportResult.cs" />
+    <Compile Include="Http\HttpInvoker.cs" />
+    <Compile Include="Http\HttpStatusHandler.cs" />
+    <Compile Include="Http\IHttpInvoker.cs" />
+    <Compile Include="Http\IHttpStatusHandler.cs" />
+    <Compile Include="ICacheProvider.cs" />
+    <Compile Include="ICookieResolver.cs" />
+    <Compile Include="INotificationMessageClient.cs" />
+    <Compile Include="ImportConstants.cs" />
+    <Compile Include="ImportHistory\IImportHistoryService.cs" />
+    <Compile Include="ImportHistory\ImportHistoryMessage.cs" />
+    <Compile Include="ImportHistory\ImportHistoryStatusEnum.cs" />
+    <Compile Include="ImportResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IStorageProvider.cs" />
+    <Compile Include="IStoreFile.cs" />
+    <Compile Include="JsonFormat\ApiPayloadArray.cs" />
+    <Compile Include="JsonFormat\ApiRecordJsonGenerator.cs" />
+    <Compile Include="JsonFormat\ApiPayloadStringArray.cs" />
+    <Compile Include="JsonFormat\IApiRecordJsonGenerator.cs" />
+    <Compile Include="JsonFormat\IFormatJson.cs" />
+    <Compile Include="JsonFormat\JsonFormatter.cs" />
+    <Compile Include="Mapping\CloneClientMapping.cs" />
+    <Compile Include="Mapping\CloneUserMapping.cs" />
+    <Compile Include="Mapping\ConvertMapInfo.cs" />
+    <Compile Include="Mapping\ConvertMapKeysValidator.cs" />
+    <Compile Include="Mapping\GeneratedMapping.cs" />
+    <Compile Include="ImportException.cs" />
+    <Compile Include="Mapping\ApiMappingAudit.cs" />
+    <Compile Include="Mapping\ApiMappingStatusInfo.cs" />
+    <Compile Include="Mapping\ApiMappingTraverser.cs" />
+    <Compile Include="Mapping\ApiMapping.cs" />
+    <Compile Include="Mapping\BaseMappingGeneratorFactory.cs" />
+    <Compile Include="Mapping\ClientMapping.cs" />
+    <Compile Include="Mapping\CommonSavedMapping.cs" />
+    <Compile Include="Mapping\ConstantSourceTypeHandler.cs" />
+    <Compile Include="Mapping\FileSourceTypeHandler.cs" />
+    <Compile Include="Mapping\GenerateMapAudit.cs" />
+    <Compile Include="Mapping\GlobalAndClientLookupFieldTransformer.cs" />
+    <Compile Include="Mapping\GlobalMapping.cs" />
+    <Compile Include="Mapping\HeaderAsValueTypeHandler.cs" />
+    <Compile Include="Mapping\IMapConverter.cs" />
+    <Compile Include="Mapping\IMapService.cs" />
+    <Compile Include="Mapping\IMapOperator.cs" />
+    <Compile Include="Mapping\IMappingManagerFactory.cs" />
+    <Compile Include="Mapping\ISourceTypeHandler.cs" />
+    <Compile Include="Mapping\ITransformFields.cs" />
+    <Compile Include="Mapping\ITransformRecord.cs" />
+    <Compile Include="Mapping\DeleteMapInfo.cs" />
+    <Compile Include="Mapping\MappingDefinition.cs" />
+    <Compile Include="Mapping\MappingFieldDefinition.cs" />
+    <Compile Include="Mapping\MappingHelper.cs" />
+    <Compile Include="Mapping\MapType.cs" />
+    <Compile Include="Mapping\NestedDictionaryConverter.cs" />
+    <Compile Include="Mapping\GlobalLookupDefinition.cs" />
+    <Compile Include="Mapping\GlobalLookupTypeTransformer.cs" />
+    <Compile Include="Mapping\IFieldMapper.cs" />
+    <Compile Include="Mapping\IGlobalLookupTypeReader.cs" />
+    <Compile Include="Mapping\IGlobalLookupTypeWriter.cs" />
+    <Compile Include="Mapping\IMappingFactory.cs" />
+    <Compile Include="Mapping\IMappingGenerator.cs" />
+    <Compile Include="Mapping\IRouteParameterFormatter.cs" />
+    <Compile Include="Mapping\MappingEndpoints.cs" />
+    <Compile Include="Mapping\RouteParameterFormatter.cs" />
+    <Compile Include="Mapping\SourceTypeEnum.cs" />
+    <Compile Include="Mapping\SourceTypeHandlerFactory.cs" />
+    <Compile Include="Mapping\SwaggerDocument.cs" />
+    <Compile Include="Mapping\TransformerException.cs" />
+    <Compile Include="Mapping\UserMapping.cs" />
+    <Compile Include="Messaging\FileTranslationData.cs" />
+    <Compile Include="Messaging\IntegrationsPayload.cs" />
+    <Compile Include="Messaging\RestApiPayload.cs" />
+    <Compile Include="MockNotificationMessageClient.cs" />
+    <Compile Include="NotificationMessageClient.cs" />
+    <Compile Include="Messaging\ApiFileArray.cs" />
+    <Compile Include="Messaging\ApiFileTranslationData.cs" />
+    <Compile Include="Messaging\ApiRecord.cs" />
+    <Compile Include="Messaging\EeImportFileTranslationData.cs" />
+    <Compile Include="Messaging\EeImportRestApiPayload.cs" />
+    <Compile Include="Messaging\ImportCancelToken.cs" />
+    <Compile Include="Messaging\ImportFileTranslationData.cs" />
+    <Compile Include="Messaging\IStoreData.cs" />
+    <Compile Include="Messaging\MappedImportFileTranslationData.cs" />
+    <Compile Include="Messaging\MappedImportFileUploadMessage.cs" />
+    <Compile Include="Messaging\MappedImportRestApiPayload.cs" />
+    <Compile Include="Messaging\MultiSheetImportStatusMessage.cs" />
+    <Compile Include="PrivilegeConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryObject.cs" />
+    <Compile Include="Security\SecurityResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\SecurityValidator.cs" />
+    <Compile Include="Shared\CalculatePercentage.cs" />
+    <Compile Include="Shared\ErrorMessages.cs" />
+    <Compile Include="Shared\IRetryProcessor.cs" />
+    <Compile Include="Shared\RetryProcessor.cs" />
+    <Compile Include="Status\MappedFileImportStatus.cs" />
+    <Compile Include="Status\MappedFileImportStatusEnum.cs" />
+    <Compile Include="Status\MappedFileImportStatusLogger.cs" />
+    <Compile Include="Status\MappedFileImportStatusMessage.cs" />
+    <Compile Include="Status\ImportStatus.cs" />
+    <Compile Include="Status\ImportStatusLogger.cs" />
+    <Compile Include="Status\ImportStatusMessage.cs" />
+    <Compile Include="Status\ImportStatusReceiver.cs" />
+    <Compile Include="Status\ImportStatusResource.Designer.cs">
+      <DependentUpon>ImportStatusResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Status\ImportStatusRetriever.cs" />
+    <Compile Include="Validator\DuplicateMappingDestinationFieldsValidator.cs" />
+    <Compile Include="Validator\IValidator.cs" />
+    <Compile Include="Validator\MappedFileMappingValidator.cs" />
+    <Compile Include="Validator\NullMappingDefinitionValidator.cs" />
+    <Compile Include="Validator\NullSourceAndDestinationValidator.cs" />
+    <Compile Include="Web\ApiClientHandler.cs" />
+    <Compile Include="Web\ApiCookieClientHandler.cs" />
+    <Compile Include="Web\ApiCookieHttpClient.cs" />
+    <Compile Include="Web\IWebApiClientGet.cs" />
+    <Compile Include="Web\RestApiExporter.cs" />
+    <Compile Include="Web\RestApiMappingTranslator.cs" />
+    <Compile Include="Web\WebApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImportResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImportResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\SecurityResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SecurityResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Status\ImportStatusResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImportStatusResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paycor.Import.Messaging\Paycor.Import.Messaging.csproj">
+      <Project>{8467b76c-b412-4f2f-b6dd-9e8df7b6b820}</Project>
+      <Name>Paycor.Import.Messaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SubArray\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.1.9.2\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.1.9.2\build\Microsoft.Azure.DocumentDB.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Azure.DocumentDB.1.9.2\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.1.9.2\build\Microsoft.Azure.DocumentDB.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

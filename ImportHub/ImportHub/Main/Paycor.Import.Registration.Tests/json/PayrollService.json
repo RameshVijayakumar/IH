@@ -1,0 +1,2568 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2",
+    "title": "Payroll Api v2"
+  },
+  "host": "localhost",
+  "basePath": "/payrollservice",
+  "schemes": [ "http" ],
+  "paths": {
+    "/v2/employees/{employeeId}/additionalearnings": {
+      "get": {
+        "tags": [ "Additional Earnings" ],
+        "operationId": "Get EmployeeEarnings by EmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "Additional Earnings" ],
+        "operationId": "Create an Employee Additional Earning",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "earningDetail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeEarning.EmployeeEarningDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/additionalearnings/{id}": {
+      "get": {
+        "tags": [ "Additional Earnings" ],
+        "operationId": "Get EmployeeEarning by EarningId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "put": {
+        "tags": [ "Additional Earnings" ],
+        "operationId": "Insert an Employee Earning",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeEarning",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeEarning.EmployeeEarningDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "Additional Earnings" ],
+        "operationId": "Delete an EmployeeEarning",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/deductions": {
+      "get": {
+        "tags": [ "Client Deductions" ],
+        "operationId": "ClientDeductions_GetClientDeduction",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "clientCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientDeduction.DeductionDetail" }
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/earnings": {
+      "get": {
+        "tags": [ "Client Earnings" ],
+        "operationId": "ClientEarnings_GetClientEarning",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "clientCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientEarning.EarningDetail" }
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/taxes": {
+      "get": {
+        "tags": [ "Client Tax" ],
+        "operationId": "ClientTax_GetTaxes",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "globalCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientTax.TaxDetail" }
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "Client Tax" ],
+        "operationId": "ClientTax_AddTax",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "clientTax",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientTax.Create.AddClientTaxCommand" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientTax.TaxDetail" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/taxes/{id}": {
+      "put": {
+        "tags": [ "Client Tax" ],
+        "operationId": "ClientTax_UpdateTax",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "clientTax",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientTax.Update.UpdateClientTaxCommand" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.ClientTax.TaxDetail" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/accruals": {
+      "get": {
+        "tags": [ "Employee Accruals" ],
+        "operationId": "Get EmployeeAccruals by EmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "Employee Accruals" ],
+        "operationId": "Create an Employee Accrual",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "employeeAccrualDetail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeAccruals.EmployeeAccrualDetail" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/accruals/{id}": {
+      "get": {
+        "tags": [ "Employee Accruals" ],
+        "operationId": "Gets an Employee Accrual",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "put": {
+        "tags": [ "Employee Accruals" ],
+        "operationId": "Update an Employee Accrual",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "detail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeAccruals.EmployeeAccrualDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/deductions": {
+      "get": {
+        "tags": [ "Employee Deductions" ],
+        "operationId": "Get Employee Deductions by EmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "Employee Deductions" ],
+        "operationId": "Insert an Employee Deduction",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeDeduction",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeDeduction.EmployeeDeductionDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/deductions/{id}": {
+      "get": {
+        "tags": [ "Employee Deductions" ],
+        "operationId": "Get Employee Deduction by EmployeeId and Deduction Id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "put": {
+        "tags": [ "Employee Deductions" ],
+        "operationId": "Insert an Employee Deduction",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeDeduction",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeDeduction.EmployeeDeductionDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "Employee Deductions" ],
+        "operationId": "Insert an Employee Deduction",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/deductions/{deductionId}/effectiveDates/{id}": {
+      "delete": {
+        "tags": [ "Employee Deductions" ],
+        "operationId": "Deletes an Employee Deduction Effective Date",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "deductionId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/directdeposits": {
+      "get": {
+        "tags": [ "Employee Direct Deposits" ],
+        "operationId": "Get EmployeeDirect Deposits by EmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "includeSensitiveData",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "Employee Direct Deposits" ],
+        "operationId": "Insert Employee Direct Deposit",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeDirectDepositDetail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeDirectDeposit.EmployeeDirectDepositDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/directdeposits/{id}": {
+      "get": {
+        "tags": [ "Employee Direct Deposits" ],
+        "operationId": "Get EmployeeDirectDeposits by EmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeSensitiveData",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "put": {
+        "tags": [ "Employee Direct Deposits" ],
+        "operationId": "Update Employee Direct Deposit",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeDirectDepositDetail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeDirectDeposit.EmployeeDirectDepositDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{id}/earningsHistory": {
+      "get": {
+        "tags": [ "Employee Pay History" ],
+        "operationId": "Get Employee Earnings YTD",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{id}/deductionsHistory": {
+      "get": {
+        "tags": [ "Employee Pay History" ],
+        "operationId": "Get Employee Deductions YTD",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{id}/taxHistory": {
+      "get": {
+        "tags": [ "Employee Pay History" ],
+        "operationId": "Get Employee Tax History",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{employeeId}/payrates": {
+      "get": {
+        "tags": [ "Employee Pay Rates" ],
+        "operationId": "Get Employee Pay Rates",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "Employee Pay Rates" ],
+        "operationId": "Insert an Employee Pay Rate",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeePayRateDetail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeePayRates.EmployeePayRateDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/payrates/{id}": {
+      "get": {
+        "tags": [ "Employee Pay Rates" ],
+        "operationId": "Get an Employee Pay Rate",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "Employee Pay Rates" ],
+        "operationId": "Update an Employee Pay Rate",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeePayRateDetail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeePayRates.EmployeePayRateDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "Employee Pay Rates" ],
+        "operationId": "Delete Employee Pay Rate",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{id}/paystubs": {
+      "get": {
+        "tags": [ "Employee Pay Stubs" ],
+        "operationId": "Get Employee PayStubs by Year",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{employeeId}/paystubs/{payStubId}/deductions": {
+      "get": {
+        "tags": [ "Employee Pay Stubs" ],
+        "operationId": "Get Check Deductions by EmployeeId and Check",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payStubId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{employeeId}/paystubs/{payStubId}/earnings": {
+      "get": {
+        "tags": [ "Employee Pay Stubs" ],
+        "operationId": "Get Check Earnings by EmployeeId and Check",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payStubId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{employeeId}/paystubs/{payStubId}/taxes": {
+      "get": {
+        "tags": [ "Employee Pay Stubs" ],
+        "operationId": "Get Check Taxes by EmployeeId and Check",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payStubId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{employeeId}/paystubs/{payStubId}/accruals": {
+      "get": {
+        "tags": [ "Employee Pay Stubs" ],
+        "operationId": "Get Check Accruals by EmployeeId and Check",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payStubId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includePrintOnCheck",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{employeeId}/taxes": {
+      "get": {
+        "tags": [ "Employee Tax" ],
+        "operationId": "Get EmployeeTaxes by EmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "Employee Tax" ],
+        "operationId": "Create an Employee Tax",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "employeeTax",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeTax.EmployeeTaxDetail" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeId}/taxes/{id}": {
+      "get": {
+        "tags": [ "Employee Tax" ],
+        "operationId": "Gets a list of Employee Taxes",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "put": {
+        "tags": [ "Employee Tax" ],
+        "operationId": "Update an Employee Tax",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "detail",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeTax.EmployeeTaxDetail" }
+          },
+          {
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{id}/w2": {
+      "get": {
+        "tags": [ "Employee W2" ],
+        "operationId": "Employee W2",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeW2.EmployeeW2Data" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/printqueue/{pqUid}": {
+      "get": {
+        "tags": [ "Print Queue" ],
+        "operationId": "Retrieve Print Queue Status",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "pqUid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rgStatusUid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "Print Queue" ],
+        "operationId": "Update Print Queue Status",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "pqUid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rgStatusUid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rgStatus",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rgStatusExtUid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    }
+  },
+  "definitions": {
+    "Paycor.PayrollDomain.Service.Metadata.Pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-mapType": "Pagination",
+      "x-mapCategory": "Uncategorized"
+    },
+    "System.Object": {
+      "type": "object",
+      "properties": { },
+      "x-mapType": "Object",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeEarning.EmployeeEarningDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employeeUid": { "type": "string" },
+        "employeeEarningUid": { "type": "string" },
+        "clientEarningId": { "type": "string" },
+        "code": { "type": "string" },
+        "description": { "type": "string" },
+        "earningType": { "type": "string" },
+        "globalEarningCode": { "type": "string" },
+        "equation": { "type": "string" },
+        "frequency": { "type": "string" },
+        "hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "includein": { "type": "string" },
+        "howToTax": { "type": "string" },
+        "howAssigned": { "type": "string" },
+        "sequenceNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "checkStub": { "type": "string" },
+        "payNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "payCategory": { "type": "string" },
+        "policyAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalToBePaid": {
+          "format": "double",
+          "type": "number"
+        },
+        "calculate": { "type": "boolean" },
+        "effectiveDates": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeEarning.AdditionalEarningsEffectiveDatesDetail" }
+        },
+        "limits": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeEarning.AdditionalEarningsLimitDetail" }
+        },
+        "isEmployeeOverride": { "type": "boolean" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-mapType": "Employee Earning",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee doesn't exist",
+          "Property": "{employeeId}",
+          "ValuePath": "id"
+        },
+        "/payrollservice/v2/earnings?clientId={{clientId}}&clientCode={{clientCode}}": {
+          "ExceptionMessage": "Client earning doesn't exist",
+          "Property": "{clientEarningId}",
+          "ValuePath": "id"
+        },
+        "/payrollservice/v2/employees/{employeeId}/additionalearnings?code={clientCode}": {
+          "ExceptionMessage": "Additional Earning not found",
+          "Property": "{id}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeEarning.AdditionalEarningsEffectiveDatesDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "factor": {
+          "format": "double",
+          "type": "number"
+        },
+        "effectiveDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "x-mapType": "Employee Earning Effective Date",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeEarning.AdditionalEarningsLimitDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "frequency": { "type": "string" },
+        "maxAmount": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "x-mapType": "Employee Earning Limit",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.ClientDeduction.DeductionDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "code": { "type": "string" },
+        "description": { "type": "string" },
+        "globalCode": { "type": "string" },
+        "retirementPlanDescription": { "type": "string" },
+        "linkedDeductionCodes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "frequency": { "type": "string" },
+        "printOnCheck": { "type": "string" },
+        "includeInPay": { "type": "string" },
+        "onW2": { "type": "string" },
+        "yearEndIndicator": { "type": "string" },
+        "familyInsuranceIndicator": { "type": "string" },
+        "state": { "type": "string" },
+        "capOnCompensation": { "type": "string" },
+        "opersEmployerCode": { "type": "string" },
+        "trackArrears": { "type": "string" },
+        "collectArrears": { "type": "string" },
+        "collectPriority": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "startContributionGroup": { "type": "string" },
+        "onW2Box12DD": { "type": "string" },
+        "employerCostIndicator": { "type": "string" },
+        "boxPopulation1099R": { "type": "string" },
+        "box1Reduce1099R": { "type": "string" },
+        "userId": { "type": "string" }
+      },
+      "x-mapType": "DeductionDetail",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.ClientEarning.EarningDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "code": { "type": "string" },
+        "description": { "type": "string" },
+        "globalEarningUid": { "type": "string" },
+        "globalCode": { "type": "string" },
+        "autoReduceRegularHours": { "type": "string" },
+        "includeInShift": { "type": "string" },
+        "calculate": { "type": "boolean" },
+        "hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "frequency": { "type": "string" },
+        "printOnCheck": { "type": "string" },
+        "includeInPay": { "type": "string" },
+        "factor": {
+          "format": "double",
+          "type": "number"
+        },
+        "onW2": { "type": "string" },
+        "includeInBlendedOvertime": { "type": "string" },
+        "taxAmountNotDetermined1099R": { "type": "string" },
+        "distributionCode1099R": { "type": "string" },
+        "opersAdditionalEarningsCode": { "type": "string" },
+        "effectiveStartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "userId": { "type": "string" },
+        "dateModified": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "x-mapType": "EarningDetail",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.ClientTax.TaxDetail": {
+      "required": [ "clientId", "globalCode" ],
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalCode": { "type": "string" },
+        "depositFrequency": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "offerDependentInsurance": { "type": "boolean" }
+      },
+      "x-mapType": "TaxDetail",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.ClientTax.Create.AddClientTaxCommand": {
+      "required": [ "clientId", "globalCode" ],
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalCode": { "type": "string" },
+        "depositFrequency": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "offerDependentInsurance": { "type": "boolean" }
+      },
+      "x-mapType": "Client Taxes",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/payrollservice/v2/taxes?clientId={{clientId}}&globalCode={{globalCode}}": {
+          "ExceptionMessage": "Client Tax does not exist",
+          "Property": "{id}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.ClientTax.Update.UpdateClientTaxCommand": {
+      "required": [ "clientId", "globalCode" ],
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "globalCode": { "type": "string" },
+        "depositFrequency": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "offerDependentInsurance": { "type": "boolean" }
+      },
+      "x-mapType": "Client Taxes",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/payrollservice/v2/taxes?clientId={{clientId}}&globalCode={{globalCode}}": {
+          "ExceptionMessage": "Client Tax does not exist",
+          "Property": "{id}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeAccruals.EmployeeAccrualDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "accrualDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "adjustedAccrualDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "accrualCode": { "type": "string" },
+        "accrualDescription": { "type": "string" },
+        "calculate": { "type": "boolean" },
+        "effectiveDates": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeAccruals.EmployeeAccrualEffectiveDateDetail" }
+        }
+      },
+      "x-mapType": "Employee Accruals",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee doesn't exist",
+          "Property": "{employeeId}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeAccruals.EmployeeAccrualEffectiveDateDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "factor": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxAvailable": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxAccuredCurrent": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxAccuredMTD": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxAccuredQTD": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxAccuredYTD": {
+          "format": "double",
+          "type": "number"
+        },
+        "effectiveDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "x-mapType": "Employee Accruals Effective Date",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeDeduction.EmployeeDeductionDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employeeUid": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "deductionUid": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "clientDeductionId": { "type": "string" },
+        "code": { "type": "string" },
+        "description": { "type": "string" },
+        "deductionType": { "type": "string" },
+        "globalDeductionCode": { "type": "string" },
+        "equation": { "type": "string" },
+        "frequency": { "type": "string" },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "effectiveStartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "howAssigned": { "type": "string" },
+        "sequenceNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "shortFallPriority": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "includeInPay": { "type": "string" },
+        "printOnCheck": { "type": "string" },
+        "shortFallType": { "type": "string" },
+        "taxCategory": { "type": "string" },
+        "effectOnEmpDeductions": { "type": "string" },
+        "effectOnClientDeductions": { "type": "string" },
+        "thirdPartyIdentifier": { "type": "string" },
+        "hasCapProcess": { "type": "string" },
+        "calculate": { "type": "boolean" },
+        "effectiveDates": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeDeduction.EmployeeDeductionEffectiveDateDetail" }
+        },
+        "limits": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Domain.EmployeeDeduction.DeductionLimitDetail" }
+        }
+      },
+      "x-mapType": "Employee Deduction",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee doesn't exist",
+          "Property": "{employeeId}",
+          "ValuePath": "id"
+        },
+        "/payrollservice/v2/deductions?clientId={{clientId}}&clientCode={{clientCode}}": {
+          "ExceptionMessage": "Client deduction doesn't exist",
+          "Property": "{clientDeductionId}",
+          "ValuePath": "id"
+        },
+        "/payrollservice/v2/employees/{employeeId}/deductions?code={clientCode}": {
+          "ExceptionMessage": "Employee deduction not found",
+          "Property": "{id}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeDeduction.EmployeeDeductionEffectiveDateDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "factor": {
+          "format": "double",
+          "type": "number"
+        },
+        "inactive": { "type": "string" },
+        "effectiveDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "x-mapType": "Employee Deduction Effective Date",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeDeduction.DeductionLimitDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "frequency": { "type": "string" },
+        "maxAmount": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "x-mapType": "DeductionLimitDetail",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeDirectDeposit.EmployeeDirectDepositDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "accountType": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "accountId": { "type": "string" },
+        "clientDeductionId": { "type": "string" },
+        "routingNumber": { "type": "string" },
+        "bankName": { "type": "string" },
+        "rate": {
+          "format": "double",
+          "type": "number"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "frequency": { "type": "string" },
+        "deductionCode": { "type": "string" },
+        "calculate": { "type": "boolean" },
+        "directDepositType": { "type": "string" }
+      },
+      "x-mapType": "Employee Direct Deposit",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Domain.EmployeePayRates.EmployeePayRateDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "rateId": { "type": "string" },
+        "effectiveDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sequence": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "payRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "annualPayRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "description": { "type": "string" },
+        "totalAnnualSalary": {
+          "format": "double",
+          "type": "number"
+        },
+        "annualHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "payType": { "type": "string" },
+        "reason": { "type": "string" }
+      },
+      "x-mapType": "Employee Pay Rates",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee doesn't exist",
+          "Property": "{employeeId}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeTax.EmployeeTaxDetail": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientTaxId": { "type": "string" },
+        "reciprocity": { "type": "string" },
+        "filingStatus": { "type": "string" },
+        "exemptions": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "blockDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "percentage": {
+          "format": "double",
+          "type": "number"
+        },
+        "nonResidentAlienAdditionalFitwh": { "type": "string" },
+        "applicableBirthyear": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "spouseWork": { "type": "string" },
+        "calculate": { "type": "boolean" },
+        "adjustWithHolding": { "type": "string" },
+        "blockIndicator": { "type": "boolean" },
+        "ncciCode": { "type": "string" },
+        "additionalStateExemptions": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "taxCode": { "type": "string" },
+        "dependentInsuranceEligible": { "type": "string" },
+        "dependentInsuranceEligibleDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "isProbationaryEmployee": { "type": "boolean" },
+        "psdCode": { "type": "string" },
+        "psdRate": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "x-mapType": "Employee Tax",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee doesn't exist",
+          "Property": "{employeeId}",
+          "ValuePath": "id"
+        },
+        "/payrollservice/v2/taxes?clientId={{clientId}}&globalCode={{globalCode}}": {
+          "ExceptionMessage": "Client tax doesn't exist",
+          "Property": "{clientTaxId}",
+          "ValuePath": "id"
+        },
+        "/payrollservice/v2/employees/{employeeId}/taxes?globalCode={{globalCode}}": {
+          "ExceptionMessage": "Employee tax doesn't exist",
+          "Property": "{id}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.PayrollDomain.Domain.EmployeeW2.EmployeeW2Data": {
+      "type": "object",
+      "properties": {
+        "clientDetail": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.ClientDetail" },
+        "w2Data": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.W2Data" },
+        "benefitsAndDeductions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.BenefitsAndDeductionSummary" }
+        },
+        "filingStatus": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.FilingStatusSummary" }
+        }
+      },
+      "x-mapType": "EmployeeW2Data",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.ClientDetail": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "address1": { "type": "string" },
+        "address2": { "type": "string" },
+        "fien": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "suite": { "type": "string" },
+        "state": { "type": "string" },
+        "local": { "type": "string" },
+        "zipCode": { "type": "string" },
+        "zip4": { "type": "string" }
+      },
+      "x-mapType": "ClientDetail",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.W2Data": {
+      "type": "object",
+      "properties": {
+        "wagesTipsAndCompensation": {
+          "format": "double",
+          "type": "number"
+        },
+        "federalIncomeTax": {
+          "format": "double",
+          "type": "number"
+        },
+        "socialSecurityWages": {
+          "format": "double",
+          "type": "number"
+        },
+        "socialSecurityTax": {
+          "format": "double",
+          "type": "number"
+        },
+        "medicareWagesAndTips": {
+          "format": "double",
+          "type": "number"
+        },
+        "medicareTaxWithheld": {
+          "format": "double",
+          "type": "number"
+        },
+        "socialSecurityTips": {
+          "format": "double",
+          "type": "number"
+        },
+        "allocatedTips": {
+          "format": "double",
+          "type": "number"
+        },
+        "advanceEICPayment": {
+          "format": "double",
+          "type": "number"
+        },
+        "dependentCareBenefits": {
+          "format": "double",
+          "type": "number"
+        },
+        "nonQualifiedPlans": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalGrossWages": {
+          "format": "double",
+          "type": "number"
+        },
+        "stateEmployee": { "type": "string" },
+        "pensionPlan": { "type": "string" },
+        "thirdPartySick": { "type": "string" },
+        "local": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.W2LocalEntity" }
+        },
+        "state": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.W2StateEntity" }
+        },
+        "box14": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.CodeValueEntity" }
+        },
+        "box12": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Paycor.PayrollDomain.Shared.Entity.CodeValueEntity" }
+        }
+      },
+      "x-mapType": "W2Data",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.BenefitsAndDeductionSummary": {
+      "type": "object",
+      "properties": {
+        "summaryType": { "type": "string" },
+        "description": { "type": "string" },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "box": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-mapType": "BenefitsAndDeductionSummary",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.FilingStatusSummary": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "filingStatus": { "type": "string" },
+        "exemptions": { "type": "string" }
+      },
+      "x-mapType": "FilingStatusSummary",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.W2LocalEntity": {
+      "type": "object",
+      "properties": {
+        "localWagesAndTips": {
+          "format": "double",
+          "type": "number"
+        },
+        "localIncomeTax": {
+          "format": "double",
+          "type": "number"
+        },
+        "localityName": { "type": "string" },
+        "taxIdNumber": { "type": "string" }
+      },
+      "x-mapType": "W2LocalEntity",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.W2StateEntity": {
+      "type": "object",
+      "properties": {
+        "stateCode": { "type": "string" },
+        "employerStateId": { "type": "string" },
+        "stateWagesAndTips": {
+          "format": "double",
+          "type": "number"
+        },
+        "stateIncomeTax": {
+          "format": "double",
+          "type": "number"
+        },
+        "default": { "type": "boolean" }
+      },
+      "x-mapType": "W2StateEntity",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.PayrollDomain.Shared.Entity.CodeValueEntity": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "format": "double",
+          "type": "number"
+        },
+        "code": { "type": "string" }
+      },
+      "x-mapType": "CodeValueEntity",
+      "x-mapCategory": "Uncategorized"
+    }
+  }
+}

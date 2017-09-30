@@ -1,0 +1,379 @@
+﻿[
+  {
+    "docUrl": "http://localhost/referenceapi/swagger/docs/v3",
+    "id": "930f2db1-73a3-4e03-892a-10dd441681ed",
+    "mappingName": "Driver (V3)",
+    "generatedMappingName": null,
+    "mappingEndpoints": {
+      "post": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers",
+      "put": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers/{id}",
+      "delete": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers/{id}",
+      "patch": null
+    },
+    "mapping": {
+      "FieldDefinitions": [
+        {
+          "Source": "lastName",
+          "Destination": "lastName",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "firstName",
+          "Destination": "firstName",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "racingNumber",
+          "Destination": "racingNumber",
+          "GlobalLookupType": null,
+          "Type": "int",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "country",
+          "Destination": "country",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "worldChampionships",
+          "Destination": "worldChampionships",
+          "GlobalLookupType": null,
+          "Type": "int",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "teamId",
+          "Destination": "teamId",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "id",
+          "Destination": "id",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        },
+        {
+          "Source": "action",
+          "Destination": "ih:action",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        }
+      ]
+    },
+    "mappingDescription": "Import Formula 1 drivers - this is a feaux import",
+    "mappingCategory": "Formula 1",
+    "isBatchSupported": false,
+    "isBatchChunkingSupported": false,
+    "preferredBatchChunkSize": null,
+    "chunkSize": 2,
+    "objectType": "Driver (V3)",
+    "hasHeader": null,
+    "systemType": "Paycor.Import.Mapping.GeneratedMapping"
+  },
+  {
+    "isMappingValid": true,
+    "id": "fb630725-2b55-4269-9763-9b30e494f158",
+    "mappingName": "Driver - Country Remap",
+    "generatedMappingName": null,
+    "mappingEndpoints": {
+      "post": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers",
+      "put": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers/{id}",
+      "delete": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers/{id}",
+      "patch": null
+    },
+    "mapping": {
+      "FieldDefinitions": [
+        {
+          "Source": "Id",
+          "Destination": "id",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "LastName",
+          "Destination": "lastName",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "FirstName",
+          "Destination": "firstName",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "TeamId",
+          "Destination": "teamId",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "WorldChampionships",
+          "Destination": "worldChampionships",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "RacingNumber",
+          "Destination": "racingNumber",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "WorldDomain",
+          "Destination": "country",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 2,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": "AlwaysCountry"
+        },
+        {
+          "Source": "action",
+          "Destination": "ih:action",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        }
+      ]
+    },
+    "mappingDescription": null,
+    "mappingCategory": null,
+    "isBatchSupported": false,
+    "isBatchChunkingSupported": false,
+    "preferredBatchChunkSize": null,
+    "chunkSize": 2,
+    "objectType": "Driver (V3)",
+    "hasHeader": true,
+    "systemType": "Paycor.Import.Mapping.GlobalMapping"
+  },
+  {
+    "isMappingValid": true,
+    "id": "f265a026-0a3c-4753-9831-1dd497243c2a",
+    "mappingName": "Driver - No Country Header",
+    "generatedMappingName": null,
+    "mappingEndpoints": {
+      "post": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers",
+      "put": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers/{id}",
+      "delete": "http://localhost/referenceapi/import/referenceapi/v3/formula1/drivers/{id}",
+      "patch": null
+    },
+    "mapping": {
+      "FieldDefinitions": [
+        {
+          "Source": "Id",
+          "Destination": "id",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "LastName",
+          "Destination": "lastName",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "FirstName",
+          "Destination": "firstName",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "TeamId",
+          "Destination": "teamId",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "WorldChampionships",
+          "Destination": "worldChampionships",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "RacingNumber",
+          "Destination": "racingNumber",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": true,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": null
+        },
+        {
+          "Source": "4",
+          "Destination": "country",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 2,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false,
+          "HeadingDestination": "AlwaysCountry"
+        },
+        {
+          "Source": "action",
+          "Destination": "ih:action",
+          "GlobalLookupType": null,
+          "Type": "string",
+          "Required": false,
+          "EndPoint": null,
+          "ValuePath": null,
+          "SourceType": 0,
+          "ExceptionMessage": null,
+          "IsRequiredForPayload": false
+        }
+      ]
+    },
+    "mappingDescription": null,
+    "mappingCategory": null,
+    "isBatchSupported": false,
+    "isBatchChunkingSupported": false,
+    "preferredBatchChunkSize": null,
+    "chunkSize": 2,
+    "objectType": "Driver (V3)",
+    "hasHeader": true,
+    "systemType": "Paycor.Import.Mapping.GlobalMapping"
+  }
+]

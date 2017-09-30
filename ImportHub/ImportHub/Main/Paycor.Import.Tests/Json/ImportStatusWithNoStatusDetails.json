@@ -1,0 +1,22 @@
+﻿{
+  "Status": 100,
+  "IssueId": "e5e62882-8f0f-4025-a1e6-f3395470363b",
+  "IssueStatus": "InternalServerError",
+  "IssueTitle": "Unable to Create Custom Field For Employee",
+  "IssueDetail": "Unable to Add Custom Field for EmpNumber:16208,ClientId:10027,FieldName:pick list currency,FieldValue:4567.89",
+  "ApiLink": null,
+  "Message": "There was a problem with the import in progress and processing cannot continue.",
+  "ImportType": "EmployeeCustomField",
+  "ClientId": null,
+  "User": "93b48f53-8876-e511-8893-005056bd7869",
+  "Source": null,
+  "SuccessRecordsCount": 0,
+  "FailRecordsCount": 4,
+  "WarnRecordCount": null,
+  "Current": 4,
+  "Total": 4,
+  "ResultsDownloadLink": null,
+  "Id": "03608626-9cbf-4ba1-aab9-60fbd0db69f2",
+  "FileName": "employeecustomfields.xlsx",
+  "PercentComplete": 100.0
+}

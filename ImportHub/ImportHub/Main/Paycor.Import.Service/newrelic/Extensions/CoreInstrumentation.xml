@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!-- Copyright (c) 2008-2014 New Relic, Inc.  All rights reserved. --><!--
+	When you edit this file, please use an XML aware editor (such as Visual Studio),
+	and pair with the companion file extension.xsd to minimize the
+	chance of introducing typos that may confuse the agent when it is run.
+--><extension xmlns="urn:newrelic-extension">
+	<instrumentation>
+
+		<tracerFactory>
+			<match assemblyName="System.Web" className="System.Web.UI.Page">
+				<!--<exactMethodMatcher methodName="Render" parameters="System.Web.UI.HtmlTextWriter" />-->
+				<exactMethodMatcher methodName="PerformPreInit" />
+			</match>
+			<match assemblyName="System.Web" className="System.Web.Compilation.AssemblyBuilder">
+				<exactMethodMatcher methodName="Compile" />
+			</match>
+			<match assemblyName="System.Web" className="System.Web.Compilation.BuildManager">
+				<exactMethodMatcher methodName="CompileWebFile" />
+			</match>
+		</tracerFactory>
+
+		<!-- **************************  WEB SERVICES  ***************************** -->
+
+		<tracerFactory name="NewRelic.Agent.Core.Tracer.Factories.ServiceModel.WebServiceMethodTracerFactory" transactionNamingPriority="5">
+			<match assemblyName="System.Web.Extensions" className="System.Web.Script.Services.WebServiceMethodData">
+				<exactMethodMatcher methodName="CallMethod" />
+			</match>
+		</tracerFactory>
+
+		<!-- NET external calls -->
+
+		
+		<tracerFactory name="NewRelic.Agent.Core.Tracer.Factories.Net.HttpWebRequestTracerFactory">
+			<match assemblyName="System" className="System.Net.HttpWebRequest">
+				<exactMethodMatcher methodName="GetResponse" />
+			</match>
+		</tracerFactory>
+
+		<!-- **************************  DATABASE INSTRUMENTATION  ***************************** -->
+
+		<!-- command methods -->
+		<tracerFactory name="NewRelic.Agent.Core.Tracer.Factories.Sql.DbCommandExecuteReaderTracerFactory">
+			<match assemblyName="System.Data" className="System.Data.OleDb.OleDbCommand,System.Data.Odbc.OdbcCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Data.CommandBehavior" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+				<exactMethodMatcher methodName="ExecuteScalar" />
+			</match>
+
+			<match assemblyName="System.Data" className="System.Data.SqlClient.SqlCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Data.CommandBehavior,System.String" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+				<exactMethodMatcher methodName="ExecuteScalar" />
+				<exactMethodMatcher methodName="ExecuteXmlReader" />
+			</match>
+
+			<!-- built in deprecated Oracle driver -->
+			<match assemblyName="System.Data.OracleClient" className="System.Data.OracleClient.OracleCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Data.CommandBehavior" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+				<exactMethodMatcher methodName="ExecuteScalar" />
+			</match>
+
+			<!-- Oracle vendor driver -->
+			<match assemblyName="Oracle.DataAccess" className="Oracle.DataAccess.Client.OracleCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Boolean,System.Boolean,System.Data.CommandBehavior" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+				<exactMethodMatcher methodName="ExecuteScalar" />
+				<exactMethodMatcher methodName="ExecuteXmlReader" />
+			</match>
+			
+			<!-- Oracle vendor driver for ManagedDataAccess -->
+			<match assemblyName="Oracle.ManagedDataAccess" className="Oracle.ManagedDataAccess.Client.OracleCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Boolean,System.Boolean,System.Data.CommandBehavior" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+				<exactMethodMatcher methodName="ExecuteScalar" />
+				<exactMethodMatcher methodName="ExecuteXmlReader" />
+			</match>
+
+			<!-- MySql (official) driver -->
+			<match assemblyName="MySql.Data" className="MySql.Data.MySqlClient.MySqlCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Data.CommandBehavior" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+			</match>
+
+			<!-- MySql CoreLabs driver -->
+			<match assemblyName="Devart.Data.MySql" className="Devart.Data.MySql.MySqlCommand">
+				<exactMethodMatcher methodName="ExecuteReader" parameters="System.Data.CommandBehavior" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+			</match>
+
+			<!-- Npgsql Postgres data provider -->
+			<match assemblyName="Npgsql" className="Npgsql.NpgsqlCommand">
+				<exactMethodMatcher methodName="ExecuteReader" />
+				<exactMethodMatcher methodName="ExecuteNonQuery" />
+				<exactMethodMatcher methodName="ExecuteScalar" />
+			</match>
+
+		</tracerFactory>
+
+		<!-- datareader methods -->
+		<tracerFactory name="NewRelic.Agent.Core.Tracer.Factories.Sql.DataReaderTracerFactory" level="1" enabled="false">
+			<match assemblyName="System.Data" className="System.Data.SqlClient.SqlDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+
+			<!-- built in deprecated Oracle driver -->
+			<match assemblyName="System.Data.OracleClient" className="System.Data.OracleClient.OracleDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+
+			<!-- Oracle vendor driver -->
+			<match assemblyName="Oracle.DataAccess" className="Oracle.DataAccess.Client.OracleDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+			
+			<!-- Oracle vendor driver for ManagedDataAccess -->
+			<match assemblyName="Oracle.ManagedDataAccess" className="Oracle.ManagedDataAccess.Client.OracleDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+
+			<!-- MySql (official) driver -->
+			<match assemblyName="MySql.Data" className="MySql.Data.MySqlClient.MySqlDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+
+			<!-- Postgres data provider -->
+			<match assemblyName="Npgsql" className="Npgsql.ForwardsOnlyDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+			<match assemblyName="Npgsql" className="Npgsql.CachingDataReader">
+				<exactMethodMatcher methodName="NextResult" />
+				<exactMethodMatcher methodName="Read" />
+			</match>
+
+		</tracerFactory>
+
+		<!-- DbConnection.Open() -->
+		<tracerFactory>
+			<match assemblyName="System.Data" className="System.Data.SqlClient.SqlConnection,System.Data.Odbc.OdbcConnection,System.Data.OleDb.OleDbConnection">
+				<exactMethodMatcher methodName="Open" />
+			</match>
+
+			<!-- built in deprecated Oracle driver -->
+			<match assemblyName="System.Data.OracleClient" className="System.Data.OracleClient.OracleConnection">
+				<exactMethodMatcher methodName="Open" />
+			</match>
+
+			<!-- Oracle vendor driver -->
+			<match assemblyName="Oracle.DataAccess" className="Oracle.DataAccess.Client.OracleConnection">
+				<exactMethodMatcher methodName="Open" />
+			</match>
+			
+			<!-- Oracle vendor driver for ManagedDataAccess -->
+			<match assemblyName="Oracle.ManagedDataAccess" className="Oracle.ManagedDataAccess.Client.OracleConnection">
+				<exactMethodMatcher methodName="Open" />
+			</match>
+
+			<!-- MySql (official) driver -->
+			<match assemblyName="MySql.Data" className="MySql.Data.MySqlClient.MySqlConnection">
+				<exactMethodMatcher methodName="Open" />
+			</match>
+
+			<!-- Npgsql Postgres data provider -->
+			<match assemblyName="Npgsql" className="Npgsql.NpgsqlConnection">
+				<exactMethodMatcher methodName="Open" />
+			</match>
+
+		</tracerFactory>
+
+		<!-- **************************  DotNetNuke CMS  ***************************** -->
+		<tracerFactory name="NewRelic.Agent.Core.Tracer.Factories.Frameworks.DotNetNuke.PageInitTracerFactory" transactionNamingPriority="5">
+			<match assemblyName="DotNetNuke" className="DotNetNuke.Framework.PageBase">
+				<exactMethodMatcher methodName="OnInit" />
+			</match>
+		</tracerFactory>
+
+		<tracerFactory>
+			<match assemblyName="DotNetNuke" className="DotNetNuke.Framework.PageBase">
+				<exactMethodMatcher methodName="Render" />
+			</match>
+		</tracerFactory>
+
+		<!-- **************************  OpenRasta  ***************************** -->
+		<tracerFactory name="NewRelic.Agent.Core.Tracer.Factories.Frameworks.OpenRasta.OpenRastaHandlerTracerFactory" transactionNamingPriority="2">
+			<match assemblyName="OpenRasta.Hosting.AspNet" className="OpenRasta.Hosting.AspNet.OpenRastaHandler">
+				<exactMethodMatcher methodName="GetHandler" />
+			</match>
+		</tracerFactory>
+	</instrumentation>
+</extension>

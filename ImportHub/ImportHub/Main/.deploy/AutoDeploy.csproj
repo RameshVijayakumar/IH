@@ -1,0 +1,70 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="OctoDeploy" >
+
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <MySolutionFile>ImportHub.sln</MySolutionFile>
+  </PropertyGroup>
+  
+  <UsingTask TaskName="RenameAppConfigsHelper" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <FolderName ParameterType="System.String" Required="true" />
+      <ReplaceWith ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+
+        var folder = new System.IO.DirectoryInfo(FolderName);
+        foreach (var file in folder.GetFiles("App.*.config"))
+        {
+      var newFileName = System.IO.Path.Combine(folder.FullName, file.FullName.Replace("App.", ReplaceWith));
+      file.MoveTo(newFileName);
+        }
+
+    ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="PublishSite">
+    <MSBuild Projects="..\$(MySolutionFile)"
+             Targets="Rebuild"
+                 Properties="Configuration=$(Configuration);"
+                 ContinueOnError="false"/>
+  </Target>
+  
+  <Target Name="GetInfo" DependsOnTargets="PublishSite">
+    <GetAssemblyIdentity AssemblyFiles="..\..\bin\Paycor.Import.Service\_PublishedWebsites\Paycor.Import.Service\bin\Paycor.Import.Service.dll">
+      <Output
+				TaskParameter="Assemblies"
+				ItemName="ServiceIdentities"/>
+    </GetAssemblyIdentity>
+    <Message Text="AssemblyVersion = %(ServiceIdentities.Version)" />
+  </Target>
+  
+ 
+  <Target Name="RenameAppConfigs">
+    <Message Text="Renaming App Configs" />
+    <RenameAppConfigsHelper FolderName="..\..\bin\EmployeeImportWorker" ReplaceWith="EmployeeImportWorker.exe." />
+    <RenameAppConfigsHelper FolderName="..\..\bin\ServiceRegistrationWorker" ReplaceWith="ServiceRegistrationWorker.exe." />
+    <RenameAppConfigsHelper FolderName="..\..\bin\MappedFileImportProcessor" ReplaceWith="MappedFileImportProcessor.exe." />
+    <RenameAppConfigsHelper FolderName="..\..\bin\ImportEventReceiverLogger" ReplaceWith="ImportEventReceiverLogger.exe." />
+  </Target>
+
+  <Target Name="NuGetPack" DependsOnTargets="GetInfo;RenameAppConfigs">
+    <Exec Command = "nuget.exe pack ..\..\bin\Paycor.Import.Service\_PublishedWebsites\Paycor.Import.Service\Paycor.Import.Service.nuspec -version %(ServiceIdentities.Version)" />
+    <Exec Command = "nuget.exe pack Paycor.Import.Processor.nuspec -version %(ServiceIdentities.Version)" />
+  </Target>
+  
+  <Target Name="NuGetPush" DependsOnTargets="NuGetPack">
+    <Exec Command = "nuget.exe push Paycor.Import.Service.%(ServiceIdentities.Version).nupkg D8A6CD0E-B139-43D3-B3A9-B0DFCCDA318B  -s http://nuget.paycor.com" />
+    <Exec Command = "nuget.exe push Paycor.Import.Processor.%(ServiceIdentities.Version).nupkg D8A6CD0E-B139-43D3-B3A9-B0DFCCDA318B  -s http://nuget.paycor.com" />
+  </Target>
+  
+  <Target Name="OctoDeploy"  DependsOnTargets="NuGetPush">
+  <Exec Command="c:\octo\octo create-release --project=&quot;ImportHubProcessor&quot; --packageversion=%(ServiceIdentities.Version) --deployto=&quot;$(TargetEnvironment)&quot; --releasenotes &quot;$(ReleaseNotes)&quot; --server=http://deploy.paycor.com/api --apikey=API-OTWYAWFZPKFIVWRRQZMF2WSJLL8 --waitfordeployment --deploymenttimeout=01:00:00" />
+    <Exec Command="c:\octo\octo create-release --project=&quot;ImportHubService&quot; --packageversion=%(ServiceIdentities.Version) --deployto=&quot;$(TargetEnvironment)&quot; --releasenotes &quot;$(ReleaseNotes)&quot; --server=http://deploy.paycor.com/api --apikey=API-OTWYAWFZPKFIVWRRQZMF2WSJLL8 --waitfordeployment --deploymenttimeout=01:00:00" />
+    
+  </Target>
+  
+</Project>

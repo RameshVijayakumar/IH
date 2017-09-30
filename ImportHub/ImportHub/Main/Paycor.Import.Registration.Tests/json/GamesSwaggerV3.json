@@ -1,0 +1,766 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v3",
+    "title": "ImportHub Reference API Services (version 3)",
+    "description": "A sample API used to demonstrate integration with the ImportHub and team research. Uses Azure DocumentDb repository.",
+    "contact": {
+      "name": "Alan Pimm",
+      "email": "apimm@paycor.com"
+    }
+  },
+  "host": "localhost:8083",
+  "schemes": [ "http" ],
+  "paths": {
+    "/import/referenceapi/v3/formula1/drivers": {
+      "get": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Driver" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/formula1/drivers/{id}": {
+      "get": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_PutBy_id_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Driver" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/formula1/drivers/batch": {
+      "post": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_PostBatchBy_items",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "items",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Driver" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_DeleteBatchBy_ids",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/import/referenceapi/v3/formula1/events": {
+      "get": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Event" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/formula1/events/{id}": {
+      "get": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_PutBy_id_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Event" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "delete": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/import/referenceapi/v3/formula1/games": {
+      "get": {
+        "tags": [ "GameController" ],
+        "operationId": "GameController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "GameController" ],
+        "operationId": "GameController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.GameCatalog.Game" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/formula1/games/{id}": {
+      "get": {
+        "tags": [ "GameController" ],
+        "operationId": "GameController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "GameController" ],
+        "operationId": "GameController_PutBy_id_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.GameCatalog.Game" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "delete": {
+        "tags": [ "GameController" ],
+        "operationId": "GameController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/import/referenceapi/v3/formula1/teams": {
+      "get": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Team" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/formula1/teams/{id}": {
+      "get": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_PutBy_id_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Team" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "delete": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/import/referenceapi/v3/formula1/venues": {
+      "get": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Venue" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/formula1/venues/{id}": {
+      "get": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_PutBy_id_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.V3.F1.Venue" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "delete": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    }
+  },
+  "definitions": {
+    "System.Object": {
+      "type": "object",
+      "properties": { },
+      "x-mapType": "Object",
+      "x-mapCategory": "Uncategorized"
+    },
+    "ImportHub.ReferenceApi.Model.V3.F1.Driver": {
+      "required": [ "lastName", "firstName", "racingNumber", "teamId", "id" ],
+      "type": "object",
+      "properties": {
+        "lastName": { "type": "string" },
+        "firstName": { "type": "string" },
+        "racingNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "country": { "type": "string" },
+        "worldChampionships": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "teamId": { "type": "string" },
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "x-lookupRoutes": {
+        "/import/referenceapi/v3/formula1/drivers?lastName={lastName}": {
+          "Property": "{Id}",
+          "ValuePath": "Id"
+        },
+        "/import/referenceapi/v3/formula1/drivers?firstName={firstName}": {
+         "Property": "{Id}",
+          "ValuePath": "Id"
+        },
+        "/import/referenceapi/v3/formula1/drivers?racingNumber={racingNumber}": {
+          "Property": "{Id}",
+          "ValuePath": "Id"
+        },
+        "/import/referenceapi/v3/formula1/teams?teamName={teamName}": {
+          "Property": "{teamId}",
+          "ValuePath": "Id"
+        }
+      },
+      "x-mapType": "Driver (V3)",
+      "x-mapCategory": "Formula 1"
+    },
+    "ImportHub.ReferenceApi.Model.V3.F1.Event": {
+      "required": [ "eventName", "venueId", "id" ],
+      "type": "object",
+      "properties": {
+        "eventName": { "type": "string" },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "venueId": { "type": "string" },
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "x-mapType": "Event (V3)",
+      "x-mapCategory": "Formula 1"
+    },
+    "ImportHub.ReferenceApi.Model.V3.GameCatalog.Game": {
+      "required": [ "title", "publisher", "id" ],
+      "type": "object",
+      "properties": {
+        "title": {
+          "maxLength": 15,
+          "minLength": 0,
+          "type": "string"
+        },
+        "genre": {
+          "format": "int32",
+          "enum": [ 0, 1, 2, 3, 4, 5, 6 ],
+          "type": "integer"
+        },
+        "publisher": {
+          "maxLength": 10,
+          "minLength": 0,
+          "type": "string"
+        },
+        "rating": {
+          "format": "int32",
+          "enum": [ 1, 2, 3, 4, 5 ],
+          "type": "integer"
+        },
+        "retailPrice": {
+          "format": "double",
+          "maximum": 65,
+          "minimum": 5,
+          "type": "number"
+        },
+        "publishDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "clientId": { "type": "string" },
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "x-mapType": "Game (V3)",
+      "x-mapCategory": "Game Catalog"
+    },
+    "ImportHub.ReferenceApi.Model.V3.F1.Team": {
+      "required": [ "teamName", "country", "id" ],
+      "type": "object",
+      "properties": {
+        "teamName": { "type": "string" },
+        "country": { "type": "string" },
+        "worldChampionships": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "x-mapType": "Team (V3)",
+      "x-mapCategory": "Formula 1"
+    },
+    "ImportHub.ReferenceApi.Model.V3.F1.Venue": {
+      "required": [ "venueName", "id" ],
+      "type": "object",
+      "properties": {
+        "venueName": { "type": "string" },
+        "location": { "type": "string" },
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "x-mapType": "Venue (V3)",
+      "x-mapCategory": "Formula 1"
+    }
+  }
+
+}

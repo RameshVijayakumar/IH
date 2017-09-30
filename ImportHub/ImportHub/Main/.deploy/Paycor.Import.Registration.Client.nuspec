@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Paycor.Import.Registration.Client</id>
+    <title>Paycor.Import.Registration.Client</title>
+    <version>$version$</version>
+    <authors>Platform Integration</authors>
+    <description>Provides ability to register a RESTful WebAPI with the ImportHub so that files can be imported via the registered API.</description>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+      <dependency id="Microsoft.Bcl" version="1.1.10" />
+      <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+      <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <dependency id="Newtonsoft.Json" version="9.0" />
+      <dependency id="Paycor.SystemCheck" version="1.1" />
+      <dependency id="Swashbuckle.Core" version="5.3.2" />
+      <dependency id="WindowsAzure.ServiceBus" version="3.2.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\bin\Paycor.Import.Registration.Client\Paycor.Import.Registration.Client.dll" target="lib" />
+  </files>
+</package>

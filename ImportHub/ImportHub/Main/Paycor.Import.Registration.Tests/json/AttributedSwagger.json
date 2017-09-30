@@ -1,0 +1,115 @@
+{
+    "swagger": "2.0",
+    "info": { "version": "v2", "title": "Employee Api v2", "description": "Version 2 of a sample api that is following Paycor's best practices for a public contract", "contact": { "name": "Patrick McCoy", "email": "pmccoy@paycor.com" } },
+    "host": "localhost:1862",
+    "schemes": [ "http" ],
+    "paths": {
+        "/employee/v2/clients/{clientId}/employees/{employeeId}/courses": {
+            "get": {
+                "tags": [ "CourseController" ],
+                "operationId": "CourseController_Get",
+                "consumes": [ ],
+                "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+                "parameters": [ { "name": "clientId", "in": "path", "required": true, "type": "integer", "format": "int32" }, { "name": "employeeId", "in": "path", "required": true, "type": "integer", "format": "int64" } ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": { "$ref": "#/definitions/Paycor.SampleDomain.Service.Models.Course" }
+                        }
+                    }
+                },
+                "deprecated": false
+
+            },
+            "post": {
+                "tags": [ "CourseController" ],
+                "operationId": "CourseController_Post",
+                "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+                "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+                "parameters": [
+                    { "name": "clientId", "in": "path", "required": true, "type": "integer", "format": "int32" },
+                    { "name": "employeeId", "in": "path", "required": true, "type": "integer", "format": "int64" },
+                    {
+                        "name": "course",
+                        "in": "body",
+                        "required": true,
+                        "schema": { "$ref": "#/definitions/Paycor.SampleDomain.Service.Models.Course" }
+                    }
+                ],
+                "responses": { "200": { "description": "OK", "schema": { "$ref": "#/definitions/System.Object" } } },
+                "deprecated": false,
+            "x-optIn": true
+            }
+        },
+        "/employee/v2/clients/{clientId}/employees": {
+            "get": {
+                "tags": [ "EmployeeController" ],
+                "operationId": "EmployeeController_Get",
+                "consumes": [ ],
+                "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+                "parameters": [ { "name": "clientId", "in": "path", "required": true, "type": "integer", "format": "int32" }, { "name": "employeeNumber", "in": "query", "required": false, "type": "integer", "format": "int32" }, { "name": "fullTime", "in": "query", "required": false, "type": "boolean" }, { "name": "lastName", "in": "query", "required": false, "type": "string" }, { "name": "firstName", "in": "query", "required": false, "type": "string" } ],
+                "responses": { "200": { "description": "OK", "schema": { "type": "array", "items": { "$ref": "#/definitions/Paycor.SampleDomain.Service.Models.Employee" } } } 
+
+                },
+                "deprecated": false
+
+            }
+
+        },
+        "/employee/v2/clients/{clientId}/employees/{employeeId}": {
+            "get": {
+                "tags": [ "EmployeeController" ],
+                "operationId": "EmployeeController_Get",
+                "consumes": [ ],
+                "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+                "parameters": [ { "name": "clientId", "in": "path", "required": true, "type": "integer", "format": "int32" }, { "name": "employeeId", "in": "path", "required": true, "type": "integer", "format": "int64" } ],
+                "responses": { "200": { "description": "OK", "schema": { "$ref": "#/definitions/Paycor.SampleDomain.Service.Models.Employee" } } },
+                "deprecated": false
+
+            }
+        }
+
+    },
+    "definitions": {
+      "Paycor.SampleDomain.Service.Models.Course": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "id": { "type": "string" },
+          "employeeId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "description": { "type": "string" }
+        },
+
+        "x-chunkSize": "23",
+        "x-lookupRoutes": {
+          "/employee/v2/clients/{clientId}/employees?employeeNumber={employeeNumber}": {
+            "Property": "employeeId",
+            "ValuePath": "id"
+          }
+
+        }
+      },
+        "System.Object": { "type": "object", "properties": { } },
+        "Paycor.SampleDomain.Service.Models.Employee": { "type": "object", "properties": { "clientId": { "format": "int32", "type": "integer" }, "id": { "format": "int64", "type": "integer" }, "fullTime": { "type": "boolean" }, "employeeNumber": { "format": "int32", "type": "integer" }, "socialSecurityNumber": { "type": "string" }, "dateOfBirth": { "format": "date-time", "type": "string" }, "hireDate": { "format": "date-time", "type": "string" }, "terminationDate": { "format": "date-time", "type": "string" }, "reHireDate": { "format": "date-time", "type": "string" }, "names": { "type": "array", "items": { "$ref": "#/definitions/Paycor.SampleDomain.Service.Models.Name" } } } },
+        "Paycor.SampleDomain.Service.Models.Name": {
+            "type": "object",
+            "properties": {
+                "type": { "type": "string" },
+                "firstName": { "type": "string" },
+                "lastName": { "type": "string" },
+                "middleName": { "type": "string" },
+                "suffixName": { "type": "string" }
+
+            }
+        }
+
+    }
+}

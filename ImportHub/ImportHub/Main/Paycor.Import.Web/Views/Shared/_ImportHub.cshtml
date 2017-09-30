@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header
+{
+    <header>
+        @try
+        {
+            @Html.RenderGlobalNavigation()
+        }
+        catch { }
+    </header>
+}
+
+@RenderBody()
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            //Show global navigation if not in an iframe
+            if (!window.parent || window.parent === window) {
+                $('header:first').show();
+                perform.globalNavigation.setSelectedItem('Payroll');
+            }
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
+}

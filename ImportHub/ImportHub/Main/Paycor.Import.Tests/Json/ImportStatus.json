@@ -1,0 +1,44 @@
+﻿{
+  "Status": 100,
+  "IssueId": "e5e62882-8f0f-4025-a1e6-f3395470363b",
+  "IssueStatus": "InternalServerError",
+  "IssueTitle": "Unable to Create Custom Field For Employee",
+  "IssueDetail": "Unable to Add Custom Field for EmpNumber:16208,ClientId:10027,FieldName:pick list currency,FieldValue:4567.89",
+  "ApiLink": null,
+  "StatusDetails": [
+    {
+      "RowNumber": 1,
+      "ColumnName": "employeeCustomField.clientId",
+      "Issue": "Could not convert string to integer: 107135?. "
+    },
+    {
+      "RowNumber": 2,
+      "ColumnName": "errors",
+      "Issue": "Unable to Add Custom Field for EmpNumber:27,ClientId:14176,FieldName:Shirt Size,FieldValue:small"
+    },
+    {
+      "RowNumber": 3,
+      "ColumnName": "errors",
+      "Issue": "Unable to Add Custom Field for EmpNumber:281,ClientId:8332,FieldName:401k Eligibility,FieldValue:05/01/2016"
+    },
+    {
+      "RowNumber": 4,
+      "ColumnName": "errors",
+      "Issue": "Unable to Add Custom Field for EmpNumber:16208,ClientId:10027,FieldName:pick list currency,FieldValue:4567.89"
+    }
+  ],
+  "Message": "There was a problem with the import in progress and processing cannot continue.",
+  "ImportType": "EmployeeCustomField",
+  "ClientId": null,
+  "User": "93b48f53-8876-e511-8893-005056bd7869",
+  "Source": null,
+  "SuccessRecordsCount": 0,
+  "FailRecordsCount": 4,
+  "WarnRecordCount": null,
+  "Current": 4,
+  "Total": 4,
+  "ResultsDownloadLink": null,
+  "Id": "03608626-9cbf-4ba1-aab9-60fbd0db69f2",
+  "FileName": "employeecustomfields.xlsx",
+  "PercentComplete": 100.0
+}

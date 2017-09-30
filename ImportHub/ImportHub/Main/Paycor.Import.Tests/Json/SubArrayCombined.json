@@ -1,0 +1,41 @@
+﻿{
+  "clientId": "91970",
+  "publisher": "AT",
+  "retailPrice": "50",
+  "title": "NFL17",
+  "deductionLimits": [
+    {
+      "id": "1",
+      "frequency": "monthly",
+      "MaxAmount": "100"
+    },
+    {
+      "id": "2",
+      "frequency": "quarterly",
+      "MaxAmount": "300"
+    },
+    {
+      "id": "3",
+      "frequency": "half",
+      "MaxAmount": "600"
+    }
+  ],
+  "deductionLimits2": [
+    {
+      "id": "1",
+      "frequency": "monthly",
+      "MaxAmount": "100"
+    },
+    {
+      "id": "2",
+      "frequency": "quarterly",
+      "MaxAmount": "300"
+    },
+    {
+      "id": "3",
+      "frequency": "half",
+      "MaxAmount": "600"
+    }
+  ]
+
+}

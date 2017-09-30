@@ -1,0 +1,62 @@
+﻿h2{
+    font-size: 18px;
+    color: #f47321;
+}
+h3{
+    font-size: 13px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: #6d6e71;
+    border-bottom: 1px solid #c9cacb;
+    margin: 20px 0;
+}
+#pages{
+    display: none;
+}
+.page{
+    padding: 20px;
+}
+.import drop-down{
+    width: 300px;
+}
+section{
+    margin: 20px 10px;
+}
+
+#summary-page, #import-page{
+    display: none;
+}
+.item-count{
+    display: inline-block;
+    width: 120px;
+    margin-right: 50px;
+}
+ .item-count .count{
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+}
+ .item-count .count.error{
+     color: #e93716;
+ }
+ .item-count .description{
+    font-size: 11px;
+    display: block;
+}
+
+ .progress-banner{
+     background: #F2F2F2;
+     border-radius: 10px;
+     padding: 10px;
+     font-size: 13px;
+     text-align: center;
+ }
+
+ .progress-banner progress-bar{
+     width: 300px;
+     margin: 10px auto;
+     border: 1px solid #666;
+ }
+ .progress-banner progress-bar .indicator{
+
+ }

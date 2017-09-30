@@ -1,0 +1,289 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v3",
+    "title": "ImportHub Reference API Services (version 3)",
+    "description": "A sample API used to demonstrate integration with the ImportHub and team research. Uses Azure DocumentDb repository.",
+    "contact": {
+      "name": "Alan Pimm",
+      "email": "apimm@paycor.com"
+    }
+  },
+  "host": "localhost",
+  "basePath": "/referenceapi",
+  "schemes": [ "http" ],
+  "paths": {
+    "/import/referenceapi/v3/feauxpaycor/feauxemployees/{id}": {
+      "get": {
+        "tags": [ "FeauxEmployeeController" ],
+        "operationId": "FeauxEmployeeController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "x-mapType": "IHttpActionResult",
+              "x-mapCategory": "Uncategorized"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "FeauxEmployeeController" ],
+        "operationId": "FeauxEmployeeController_PutBy_id_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/FeauxEmployee" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "x-mapType": "IHttpActionResult",
+              "x-mapCategory": "Uncategorized"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "FeauxEmployeeController" ],
+        "operationId": "FeauxEmployeeController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "x-mapType": "IHttpActionResult",
+              "x-mapCategory": "Uncategorized"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v3/feauxpaycor/feauxemployees": {
+      "get": {
+        "tags": [ "FeauxEmployeeController" ],
+        "operationId": "FeauxEmployeeController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "x-mapType": "IHttpActionResult",
+              "x-mapCategory": "Uncategorized"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "FeauxEmployeeController" ],
+        "operationId": "FeauxEmployeeController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/FeauxEmployee" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "x-mapType": "IHttpActionResult",
+              "x-mapCategory": "Uncategorized"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "delete": {
+        "tags": [ "FeauxEmployeeController" ],
+        "operationId": "FeauxEmployeeController_DeleteAll",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "x-mapType": "IHttpActionResult",
+              "x-mapCategory": "Uncategorized"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    }
+  },
+  "definitions": {
+    "FeauxEmployee": {
+      "required": [ "clientId", "employeeNumber", "annualHours", "section125IneligibleEmployee" ],
+      "type": "object",
+      "properties": {
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employeeNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "person": { "$ref": "#/definitions/FeauxPerson" },
+        "manager": { "$ref": "#/definitions/FeauxManager" },
+        "workPhone": { "type": "string" },
+        "workEmail": { "type": "string" },
+        "employeeStatus": { "type": "string" },
+        "statusType": { "type": "string" },
+        "flsa": { "type": "string" },
+        "employeeType": { "type": "string" },
+        "annualHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ownerOfficer": { "type": "string" },
+        "ownershipPercent": {
+          "format": "double",
+          "type": "number"
+        },
+        "baseShift": { "type": "string" },
+        "keyEmployee": { "type": "boolean" },
+        "highlyCompensatedEmployee": { "type": "boolean" },
+        "familyMember": { "type": "string" },
+        "section125IneligibleEmployee": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "retirementPlan": { "type": "string" },
+        "benefitClassification": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "departmentCode": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "payrollCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "paygroupDescription": { "type": "string" },
+        "addresses": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/FeauxAddress" }
+        },
+        "id": { "type": "string" },
+        "systemType": { "type": "string" }
+      },
+      "x-mapType": "Feaux Employee",
+      "x-mapCategory": "Paycor ImportHub Reference APIs"
+    },
+    "FeauxPerson": {
+      "required": [ "clientId", "birthDate", "ssn" ],
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": { "type": "string" },
+        "middleName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "prefix": { "type": "string" },
+        "suffix": { "type": "string" },
+        "maidenName": { "type": "string" },
+        "accredited": { "type": "boolean" },
+        "legalFirstName": { "type": "string" },
+        "legalLastName": { "type": "string" },
+        "birthDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ssn": { "type": "string" },
+        "gender": { "type": "string" },
+        "homePhone": { "type": "string" },
+        "homeEmail": { "type": "string" },
+        "mobilePhone": { "type": "string" },
+        "pager": { "type": "string" },
+        "ethnicity": { "type": "string" },
+        "maritalStatus": { "type": "string" },
+        "veteranStatus": { "type": "string" },
+        "tobaccoUser": { "type": "boolean" },
+        "disabilityStatus": { "type": "string" },
+        "socialMedia": { "type": "string" }
+      },
+      "x-mapType": "FeauxPerson",
+      "x-mapCategory": "Uncategorized"
+    },
+    "FeauxManager": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "link": { "type": "string" }
+      },
+      "x-mapType": "FeauxManager",
+      "x-mapCategory": "Uncategorized"
+    },
+    "FeauxAddress": {
+      "type": "object",
+      "properties": {
+        "streetAddress": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zipCode": { "type": "string" }
+      },
+      "x-mapType": "FeauxAddress",
+      "x-mapCategory": "Uncategorized"
+    }   
+  }
+}

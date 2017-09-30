@@ -1,0 +1,96 @@
+﻿{
+  "id": "337B9565-9D05-4076-9914-2DC14497AA83",
+  "mappingName": "String And Sub Array",
+  "mappingEndpoints": {
+    "post": "http://devsbqtrweb01.dev.paycor.com/employeeservice/v2/employees",
+    "put": null,
+    "delete": null,
+    "patch": "http://devsbqtrweb01.dev.paycor.com/employeeservice/v2/employees/{id}"
+  },
+  "mapping": {
+    "FieldDefinitions": [
+      {
+        "Source": "name",
+        "Destination": "name",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "livingcity",
+        "Destination": "cities[0]",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "workcity",
+        "Destination": "cities[1]",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "interestedcity",
+        "Destination": "cities[2]",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "HomeCountry",
+        "Destination": "addresses[0].country",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "WorkCountry",
+        "Destination": "addresses[1].country",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      }
+
+    ]
+  },
+  "docUrl": null,
+  "user": null,
+  "isMappingValid": true,
+  "isBatchSupported": false,
+  "isBatchChunkingSupported": false,
+  "preferredBatchChunkSize": null,
+  "chunkSize": 0,
+  "objectType": "Employee",
+  "hasHeader": true
+}

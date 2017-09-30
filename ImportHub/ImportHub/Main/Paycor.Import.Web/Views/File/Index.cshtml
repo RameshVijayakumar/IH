@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_ImportHub.cshtml";
+    ViewBag.Title = "Import";
+    var webApiFileUploadFullUrl = ViewBag.WebApiFileUploadFullUrl;
+
+// var isAuthenticated;
+// var hasPrivledges;
+}
+
+<script>
+    window.globalWebApiUrl = "@webApiFileUploadFullUrl";
+    console.log('window.globalWebApiUrl', window.globalWebApiUrl);
+</script>
+
+<div id="pages">
+    <div class="page import" id="import-page">
+        <h2>Import Employee Data</h2>
+        <section>
+            <label>Import Type</label>
+            <drop-down placeholder="Select One...">
+                <option value="ddl_newempimp">Employee Import</option>
+            </drop-down>
+        </section>
+        <section>
+            <dnd-upload accept="txt"></dnd-upload>
+        </section>
+        <div class="button-row">
+            <button class="btn icon-remove">Cancel</button>
+            <button class="btn blue icon-ok">Upload</button>
+        </div>
+    </div>
+
+    <div class="page import" id="error-page">
+        <h2>Import Employee Data</h2>
+        <div class="banner error" id="error-parse-banner">
+            Invalid import. Please use the provided templates for correct format.
+        </div>
+        <div class="button-row">
+            <button id="back-btn" class="btn blue">Back</button>
+        </div>
+    </div>
+
+    <div class="page import" id="info-page">
+        <h2>Import Employee Data</h2>
+        <div class="progress-banner" id="info-banner">
+            <div>Processing <span id="percent-complete">0%</span> - this could take several minutes</div>
+            <progress-bar></progress-bar>
+            <div id="status-text"></div>
+        </div>
+    </div>
+
+    <div class="page import" id="summary-page">
+        <h2>Import Employee Data</h2>
+        <div class="banner warning" id="warningBanner">
+            Invalid import.  Please use the provided templates for correct format.
+        </div>
+        <div class="banner error" id="errorBanner">
+            Invalid import.  Please use the provided templates for correct format.
+        </div>
+        <h3>Import Summary</h3>
+        <div>
+            <div class="item-count">
+                <div class="count" id="importedRecordCount">0</div>
+                <div class="description">Employee Records Imported</div>
+            </div>
+            <div class="item-count">
+                <div class="count error" id="errorRecordCount">0</div>
+                <div class="description">Employee Records not Imported</div>
+            </div>
+        </div>
+        <h3>Warnings and Errors</h3>
+        <data-grid id="summary-grid" defaultSort="id">
+            <data-grid-model></data-grid-model>
+            <data-grid-click-handler></data-grid-click-handler>
+            <data-grid-sortable></data-grid-sortable>
+        </data-grid>
+        <div class="no-errors" id="no-errors">No errors or warnings.</div>
+        <div class="button-row">
+            <a id="download-btn" class="btn icon-download" target="_blank">Download Report</a>
+            <a id="done-btn" class="btn blue icon-ok" href="/Perform/Employee">Done</a>
+        </div>
+    </div>
+</div>

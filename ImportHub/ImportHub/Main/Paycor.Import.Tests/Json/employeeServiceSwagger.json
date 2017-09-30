@@ -1,0 +1,835 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2",
+    "title": "Employee Api v2"
+  },
+  "host": "localhost",
+  "basePath": "/employeeservice",
+  "schemes": [ "http" ],
+  "paths": {
+    "/v2/employees/{employeeid}/addresses": {
+      "get": {
+        "tags": [ "AddressController" ],
+        "summary": "Get Addresses of an Employee",
+        "operationId": "GetAddressByEmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "AddressController" ],
+        "summary": "Create Address for an Employee",
+        "operationId": "Add an Employee Address",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Address" }
+          },
+          {
+            "name": "employeeid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{employeeid}/addresses/{id}": {
+      "get": {
+        "tags": [ "AddressController" ],
+        "summary": "Get Address of an Employee",
+        "operationId": "GetAddressByEmpId&TypeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "AddressController" ],
+        "summary": "Update Address for an Employee",
+        "operationId": "Update an Employee Address",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Address" }
+          },
+          {
+            "name": "employeeid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees/{id}": {
+      "get": {
+        "tags": [ "EmployeeController" ],
+        "summary": "Get an Employee",
+        "operationId": "GetEmployeesById",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "includeSensitiveData",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "employeeNumber",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "put": {
+        "tags": [ "EmployeeController" ],
+        "summary": "Update an Employee",
+        "operationId": "Update an Employee",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employee",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Employee" }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "404": { "description": "Employee not found" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "delete": {
+        "tags": [ "EmployeeController" ],
+        "summary": "Delete an Employee",
+        "operationId": "Delete an Employee",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "404": { "description": "Employee not found" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "patch": {
+        "tags": [ "EmployeeController" ],
+        "summary": "Partial Update on an Employee",
+        "operationId": "Update an Employee With some Fields",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "employeePatch",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.EmployeePatch" }
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "404": { "description": "Employee not found" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/employees": {
+      "get": {
+        "tags": [ "EmployeeController" ],
+        "summary": "Get employees",
+        "operationId": "GetClientEmployees",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "includeUid",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "reportsToMe",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "objectSize",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [ "Large", "Small" ]
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "employeeNumber",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "post": {
+        "tags": [ "EmployeeController" ],
+        "summary": "Create an Employee",
+        "operationId": "Add an Employee",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employee",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Employee" }
+          },
+          {
+            "name": "includeUid",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Employee Created",
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Employee" }
+          },
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/employee/v2/employeejobtitles": {
+      "post": {
+        "tags": [ "EmployeeJobTitleController" ],
+        "operationId": "AddEmployeeJobTitle",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "employeeJobTitle",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.EmployeeJobTitle" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/persons/{id}": {
+      "get": {
+        "tags": [ "PersonController" ],
+        "summary": "Get Person by PersonId",
+        "operationId": "GetPersonById",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeSensitiveData",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/v2/employees/{id}/person": {
+      "get": {
+        "tags": [ "PersonController" ],
+        "summary": "Get Person by EmployeeId",
+        "operationId": "GetPersonByEmployeeId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "includeSensitiveData",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "patch": {
+        "tags": [ "PersonController" ],
+        "operationId": "Update a Person With some Fields",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "personPatch",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Person" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/v2/persons": {
+      "get": {
+        "tags": [ "PersonController" ],
+        "summary": "Get Persons of a client",
+        "operationId": "GetClientPersons",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "400": { "description": "Bad request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    }
+  },
+  "definitions": {
+    "Paycor.EmployeeDomain.Contract.DTO.v2.Address": {
+      "required": [ "id" ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "addressType": { "type": "string" },
+        "addressLine1": { "type": "string" },
+        "addressLine2": { "type": "string" },
+        "suite": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zip": { "type": "string" },
+        "county": { "type": "string" },
+        "country": { "type": "string" }
+      },
+      "x-mapType": "Employee Address",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Address Not Found",
+          "Property": "{employeeid}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "System.Object": {
+      "type": "object",
+      "properties": { },
+      "x-mapType": "Object",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.EmployeeDomain.Contract.DTO.v2.Employee": {
+      "required": [ "clientId", "employeeNumber" ],
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employeeUid": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employeeNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "person": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Person" },
+        "manager": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Manager" },
+        "primaryAddress": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Address" },
+        "workPhone": { "type": "string" },
+        "workEmail": { "type": "string" },
+        "employmentStatus": { "type": "string" },
+        "statusType": { "type": "string" },
+        "flsa": { "type": "string" },
+        "employeeType": { "type": "string" },
+        "annualHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "ownerOfficer": { "type": "string" },
+        "ownershipPercent": {
+          "format": "double",
+          "type": "number"
+        },
+        "baseShift": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "keyEmployee": { "type": "boolean" },
+        "highlyCompensatedEmployee": { "type": "boolean" },
+        "familyMember": { "type": "string" },
+        "section125IneligibleEmployee": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "retirementPlan": { "type": "string" },
+        "benefitClassification": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "departmentCode": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "payrollCode": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "paygroupDescription": { "type": "string" },
+        "stateCode": { "type": "string" },
+        "profilePicture": { "type": "string" },
+        "hireDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "workLocation": { "type": "string" },
+        "paygroupFrequency": { "type": "string" },
+        "reHireDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "payrollName": { "type": "string" },
+        "companyId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "workFaxNumber": { "type": "string" },
+        "terminationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "terminationReason": { "type": "string" }
+      },
+      "x-mapType": "Employee",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee Not Found",
+          "Property": "{id}",
+          "ValuePath": "id"
+        }
+      }
+    },
+    "Paycor.EmployeeDomain.Contract.DTO.v2.Person": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": { "type": "string" },
+        "middleName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "prefix": { "type": "string" },
+        "suffix": { "type": "string" },
+        "maidenName": { "type": "string" },
+        "accredited": { "type": "string" },
+        "legalFirstName": { "type": "string" },
+        "legalLastName": { "type": "string" },
+        "birthDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ssn": { "type": "string" },
+        "gender": { "type": "string" },
+        "homePhone": { "type": "string" },
+        "homeEmail": { "type": "string" },
+        "mobilePhone": { "type": "string" },
+        "ethnicity": { "type": "string" },
+        "maritalStatus": { "type": "string" },
+        "veteranStatus": { "type": "string" },
+        "isTobaccoUser": { "type": "boolean" },
+        "disabilityStatus": { "type": "string" },
+        "dischargeDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "isArmedForcesServiceMedalVeteran": { "type": "boolean" },
+        "isDisabledVeteran": { "type": "boolean" },
+        "isOtherProtectedVeteran": { "type": "boolean" },
+        "isRecentlySeperatedVeteran": { "type": "boolean" },
+        "isSpecialDisabledVeteran": { "type": "boolean" },
+        "isVietnamEra": { "type": "boolean" }
+      },
+      "x-mapType": "Person",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.EmployeeDomain.Contract.DTO.v2.Manager": {
+      "type": "object",
+      "properties": {
+        "managerEmployeeNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "managerClientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "link": { "type": "string" }
+      },
+      "x-mapType": "Manager",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.EmployeeDomain.Contract.DTO.v2.EmployeePatch": {
+      "type": "object",
+      "properties": {
+        "employeeNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "person": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Person" },
+        "manager": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Manager" },
+        "primaryAddress": { "$ref": "#/definitions/Paycor.EmployeeDomain.Contract.DTO.v2.Address" },
+        "workPhone": { "type": "string" },
+        "workEmail": { "type": "string" },
+        "employmentStatus": { "type": "string" },
+        "statusType": { "type": "string" },
+        "flsa": { "type": "string" },
+        "employeeType": { "type": "string" },
+        "annualHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "ownerOfficer": { "type": "string" },
+        "ownershipPercent": {
+          "format": "double",
+          "type": "number"
+        },
+        "baseShift": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "keyEmployee": { "type": "boolean" },
+        "highlyCompensatedEmployee": { "type": "boolean" },
+        "familyMember": { "type": "string" },
+        "section125IneligibleEmployee": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "retirementPlan": { "type": "string" },
+        "benefitClassification": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "departmentCode": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "payrollCode": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "paygroupDescription": { "type": "string" },
+        "profilePicture": { "type": "string" },
+        "terminationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "terminationReason": { "type": "string" },
+        "hireDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "reHireDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "workLocation": { "type": "string" },
+        "workFaxNumber": { "type": "string" }
+      },
+      "x-mapType": "Employee",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}": {
+          "ExceptionMessage": "Employee Not Found",
+          "Property": "{Id}",
+          "ValuePath": "Id"
+        }
+      }
+    },
+    "Paycor.EmployeeDomain.Service.Metadata.Pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-mapType": "Pagination",
+      "x-mapCategory": "Uncategorized"
+    },
+    "Paycor.EmployeeDomain.Contract.DTO.v2.EmployeeJobTitle": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employeeId": { "type": "string" },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "title": { "type": "string" }
+      },
+      "x-mapType": "Employee Job Title (V2)",
+      "x-mapCategory": "Uncategorized",
+      "x-lookupRoutes": {
+        "/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}}": {
+          "ExceptionMessage": "Employee Not Found",
+          "Property": "{employeeid}",
+          "ValuePath": "id"
+        }
+      }
+    }
+  }
+}

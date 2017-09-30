@@ -1,0 +1,412 @@
+﻿[
+  {
+    "id": "8248b813-261c-4527-ab0b-db4cedb1b279",
+    "mappingName": "MyLedger1",
+    "mappingEndpoints": {
+      "post": "http://devsbqtrweb01.dev.paycor.com/payrollservice/payroll/v1/clients/{clientId}/generalledgeraccounts",
+      "put": null,
+      "delete": null,
+      "patch": null
+    },
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "source": "clientId",
+          "destination": "clientId",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "departmentNumber",
+          "destination": "departmentNumber",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "description",
+          "destination": "description",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "accountNumber",
+          "destination": "accountNumber",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "assignToOrganization",
+          "destination": "assignToOrganization",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "debits[0].type",
+          "destination": "debits[0].type",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "debits[0].code",
+          "destination": "debits[0].code",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "credits[0].type",
+          "destination": "credits[0].type",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "credits[0].code",
+          "destination": "credits[0].code",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        }
+      ]
+    },
+    "docUrl": null,
+    "user": null,
+    "isMappingValid": true,
+    "isBatchSupported": false,
+    "objectType": "General Ledger",
+    "hasHeader": true
+  },
+  {
+    "id": "a1b74e55-7536-4307-87e2-5f4b6d07e9fb",
+    "mappingName": "Alias1",
+    "mappingEndpoints": {
+      "post": "http://devsbqtrweb01.dev.paycor.com/companyservice/company/v1/clients/{clientId}/aliases",
+      "put": null,
+      "delete": null,
+      "patch": null
+    },
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "source": "ClientID",
+          "destination": "clientId",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "Type",
+          "destination": "type",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "Key",
+          "destination": "key",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "Value",
+          "destination": "value",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "action",
+          "destination": "ih:action",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        }
+      ]
+    },
+    "docUrl": null,
+    "user": null,
+    "isMappingValid": true,
+    "isBatchSupported": false,
+    "objectType": "Alias",
+    "hasHeader": true
+  },
+  {
+    "id": "4f65b93e-4a6f-4faf-b234-91979438a73a",
+    "mappingName": "MyLeaveCase2",
+    "mappingEndpoints": {
+      "post": "http://devsbqtrweb01.dev.paycor.com/leavemanagementservice/v1/employees/{employeeid}/leaveCasesWithActivities",
+      "put": null,
+      "delete": null,
+      "patch": null
+    },
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "source": "action",
+          "destination": "ih:action",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "caseStatus",
+          "destination": "caseStatus",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "reason",
+          "destination": "reason",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "expectedStartDate",
+          "destination": "expectedStartDate",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "leaveActivities[0].startDate",
+          "destination": "leaveActivities[0].startDate",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "leaveActivities[0].hoursUsedPerDay",
+          "destination": "leaveActivities[0].hoursUsedPerDay",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "leaveActivities[0].dataSource",
+          "destination": "leaveActivities[0].dataSource",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "leaveActivities[1].startDate",
+          "destination": "leaveActivities[1].startDate",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "leaveActivities[1].hoursUsedPerDay",
+          "destination": "leaveActivities[1].hoursUsedPerDay",
+          "globalLookupType": null,
+          "type": "string",
+          "required": true,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "leaveActivities[1].dataSource",
+          "destination": "leaveActivities[1].dataSource",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "{{clientId}}&employeeNumber={{employeeNumber}}",
+          "destination": "{employeeid}",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": "http://devsbqtrweb01.dev.paycor.com/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}}",
+          "valuePath": "id",
+          "sourceType": 0,
+          "exceptionMessage": "Could not find employee for clientId and employee number"
+        }
+      ]
+    },
+    "docUrl": null,
+    "user": null,
+    "isMappingValid": true,
+    "isBatchSupported": false,
+    "objectType": "Employee Leave Case and Activities",
+    "hasHeader": true
+  },
+  {
+    "id": "799598a6-77fd-4d1c-89ed-4f3dd9a608dc",
+    "mappingName": "Sicom Timeclock File",
+    "mappingEndpoints": {
+      "post": "http://devsbqtrweb01.dev.paycor.com/PayrollProcessingAPI/api/v1/PayImport/UploadHub",
+      "put": null,
+      "delete": null,
+      "patch": null
+    },
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "source": "File#",
+          "destination": "employeeNumber",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "RegHours",
+          "destination": "regularHours",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "O/THours",
+          "destination": "overtimeHours",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "Hours3Code",
+          "destination": "hoursCode",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        },
+        {
+          "source": "Hours3Amount",
+          "destination": "codedHours",
+          "globalLookupType": null,
+          "type": "string",
+          "required": false,
+          "endPoint": null,
+          "valuePath": null,
+          "sourceType": 0,
+          "exceptionMessage": null
+        }
+      ]
+    },
+    "docUrl": null,
+    "user": null,
+    "isMappingValid": true,
+    "isBatchSupported": true,
+    "objectType": "Point of Sales Pay Import",
+    "hasHeader": true
+  }
+]

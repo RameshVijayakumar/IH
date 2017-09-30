@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Paycor.Import.Messaging</id>
+    <title>Paycor.Import.Messaging</title>
+    <version>$version$</version>
+    <authors>Paycor</authors>
+    <description>Provides classes that are used by Azure Service Bus messaging for ImportHub.</description>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="9.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\bin\Paycor.Import.Messaging\Paycor.Import.Messaging.dll" target="lib" />
+  </files>
+</package>

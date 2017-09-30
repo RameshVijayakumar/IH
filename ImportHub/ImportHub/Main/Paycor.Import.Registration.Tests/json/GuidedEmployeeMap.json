@@ -1,0 +1,86 @@
+﻿{
+  "Id": null,
+  "MappingName": "Employee",
+  "MappingEndpoints": { "Post": "http://localhost/EmployeeService/v2/employees" },
+  "Mapping": {
+    "FieldDefinitions": [
+      {
+        "Source": "action",
+        "Destination": "action",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "person.clientId",
+        "Destination": "person.clientId",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "ClientId",
+        "Destination": "ClientId",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "EmployeeNumber",
+        "Destination": "EmployeeNumber",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "DepartmentCode",
+        "Destination": "DepartmentCode",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "PayrollCode",
+        "Destination": "PayrollCode",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "PaygroupDescription",
+        "Destination": "PaygroupDescription",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "StateCode",
+        "Destination": "StateCode",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "Person.FirstName",
+        "Destination": "Person.FirstName",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "Person.MiddleName",
+        "Destination": "Person.MiddleName",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      },
+      {
+        "Source": "Person.LastName",
+        "Destination": "Person.LastName",
+        "EndPoint": null,
+        "ValuePath": null,
+        "ExceptionMessage": null
+      }
+    ]
+  }
+}

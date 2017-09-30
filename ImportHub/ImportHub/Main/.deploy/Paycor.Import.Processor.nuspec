@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Paycor.Import.Processor</id>
+    <title>Paycor.Import.Processor</title>
+    <version>$version$</version>
+    <authors>Paycor</authors>
+    <description>Import Hub Processor (web job)</description>
+  </metadata>
+  <files>
+    <file src="..\..\bin\EmployeeImportWorker\**\*.*" target="App_Data\jobs\continuous\employeimportworker" exclude="**\localsettings.config" />
+    <file src="..\..\bin\ServiceRegistrationWorker\**\*.*" target="App_Data\jobs\continuous\serviceregistrationworker" exclude="**\localsettings.config" />
+    <file src="..\..\bin\MappedFileImportProcessor\**\*.*" target="App_Data\jobs\continuous\mappedfileimportprocessor" exclude="**\localsettings.config" />
+    <file src="..\..\bin\ImportEventReceiverLogger\**\*.*" target="App_Data\jobs\continuous\importeventreceiverlogger" exclude="**\localsettings.config" />
+    <file src="Paycor.Import.Processor\Web.config" target="Web.config" />
+  </files>
+</package>

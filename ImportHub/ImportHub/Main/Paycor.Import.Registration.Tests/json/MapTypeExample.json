@@ -1,0 +1,590 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2",
+    "title": "ImportHub Reference API Services (version 2)",
+    "description": "A sample API used to demonstrate integration with the ImportHub and team research.",
+    "contact": {
+      "name": "Alan Pimm",
+      "email": "apimm@paycor.com"
+    }
+  },
+  "host": "localhost:8083",
+  "schemes": [ "http" ],
+  "paths": {
+    "/import/referenceapi/v2/formula1/drivers": {
+      "get": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_GetBy_racingNumber_lastName_firstName",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "racingNumber",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "lastName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "firstName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.F1.Driver" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/drivers/{id}": {
+      "get": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/teams/{teamId}/drivers": {
+      "get": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_GetAllByTeamBy_teamId",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "DriverController" ],
+        "operationId": "DriverController_PostBy_teamId_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.F1.Driver" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/events": {
+      "get": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.F1.Event" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/events/{id}": {
+      "get": {
+        "tags": [ "EventController" ],
+        "operationId": "EventController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/gamecatalog/games": {
+      "get": {
+        "tags": [ "GameController" ],
+        "summary": "Gets the list of all games in the repository.",
+        "operationId": "GameController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": { "200": { "description": "OK" } },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "GameController" ],
+        "summary": "Adds a new instance of Game to the repository.",
+        "operationId": "GameController_PostBy_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "game",
+            "in": "body",
+            "description": "the game to add",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Service.Models.GameEntity" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "201": { "description": "Created" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/gamecatalog/games/{id}": {
+      "get": {
+        "tags": [ "GameController" ],
+        "summary": "Gets a the specified game from the repository.",
+        "operationId": "GameController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "the id of the game to retrieve",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "404": { "description": "NotFound" }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "put": {
+        "tags": [ "GameController" ],
+        "summary": "Updates the specified game in the repository.",
+        "operationId": "GameController_PutBy_id_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Service.Models.GameEntity} to update.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "game",
+            "in": "body",
+            "description": "The updated game",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Service.Models.GameEntity" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      },
+      "delete": {
+        "tags": [ "GameController" ],
+        "summary": "Deletes the specified game in the repository.",
+        "operationId": "GameController_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Service.Models.GameEntity} to delete.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "410": { "description": "Gone" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false,
+        "x-optIn": false
+      }
+    },
+    "/import/referenceapi/v2/formula1/teams": {
+      "get": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.F1.Team" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/teams/{id}": {
+      "get": {
+        "tags": [ "TeamController" ],
+        "operationId": "TeamController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/venues": {
+      "get": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      },
+      "post": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_PostBy_item",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.F1.Venue" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    },
+    "/import/referenceapi/v2/formula1/venues/{id}": {
+      "get": {
+        "tags": [ "VenueController" ],
+        "operationId": "VenueController_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/System.Object" }
+          }
+        },
+        "deprecated": false,
+        "x-optIn": true
+      }
+    }
+  },
+  "definitions": {
+    "System.Object": {
+      "type": "object",
+      "properties": { }
+    },
+    "ImportHub.ReferenceApi.Model.F1.Driver": {
+      "required": [ "lastName", "firstName", "racingNumber", "teamId" ],
+      "type": "object",
+      "properties": {
+        "driverId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "lastName": { "type": "string" },
+        "firstName": { "type": "string" },
+        "racingNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "country": { "type": "string" },
+        "worldChampionships": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "teamId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-mapType": "Drivers",
+      "x-mapCategory": "Formula 1"
+    },
+    "ImportHub.ReferenceApi.Model.F1.Event": {
+      "required": [ "name", "venueId" ],
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": { "type": "string" },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "venueId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-mapType": "Events",
+      "x-mapCategory": "Formula 1"
+    },
+    "ImportHub.ReferenceApi.Service.Models.GameEntity": {
+      "description": "Allow games to be stored in an Azure Table storage.",
+      "required": [ "title", "retailPrice" ],
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "The title of the game.",
+          "type": "string"
+        },
+        "genre": {
+          "description": "The genre of the game (e.g. card, board, action, etc.).",
+          "type": "string"
+        },
+        "publisher": {
+          "description": "The company or person who published the game.",
+          "type": "string"
+        },
+        "rating": {
+          "description": "The average rating of the game as posted by game owners.",
+          "type": "string"
+        },
+        "retailPrice": {
+          "description": "The current retail price of the game.",
+          "type": "string"
+        },
+        "publishDate": {
+          "format": "date-time",
+          "description": "The date the game was published.",
+          "type": "string"
+        },
+        "partitionKey": { "type": "string" },
+        "rowKey": { "type": "string" },
+        "timestamp": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "eTag": { "type": "string" }
+      },
+      "x-mapType": "Game",
+      "x-mapCategory": "Game Catalog"
+    },
+    "ImportHub.ReferenceApi.Model.F1.Team": {
+      "required": [ "name", "country" ],
+      "type": "object",
+      "properties": {
+        "teamId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": { "type": "string" },
+        "country": { "type": "string" },
+        "worldChampionships": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "drivers": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ImportHub.ReferenceApi.Model.F1.Driver" }
+        }
+      },
+      "x-mapType": "Teams",
+      "x-mapCategory": "Formula 1"
+    },
+    "ImportHub.ReferenceApi.Model.F1.Venue": {
+      "required": [ "title", "raceTrack" ],
+      "type": "object",
+      "properties": {
+        "venueId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "title": { "type": "string" },
+        "location": { "type": "string" },
+        "raceTrack": { "type": "string" }
+      },
+      "x-mapType": "Venues",
+      "x-mapCategory": "Formula 1"
+    }
+  }
+
+}

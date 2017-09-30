@@ -1,0 +1,3 @@
+GameId,Title,genre,publisher,rating,retailprice,publishDate,clientId
+101,NFL16,Action,M_101,2,30,,client_101
+103,NFL15,Action,A_102,3,35,,client_102

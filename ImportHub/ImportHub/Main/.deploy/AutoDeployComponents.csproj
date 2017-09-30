@@ -1,0 +1,48 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="NugetPush" >
+
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <MySolutionFile>ImportHub.sln</MySolutionFile>
+  </PropertyGroup>
+  
+  <Target Name="PublishToNuGet">
+    <MSBuild Projects="..\$(MySolutionFile)"
+             Targets="Rebuild"
+                 Properties="Configuration=$(Configuration);"
+                 ContinueOnError="false"/>
+  </Target>
+
+  <Target Name="GetInfo" DependsOnTargets="PublishToNuGet">
+    <GetAssemblyIdentity AssemblyFiles="..\..\bin\Paycor.Import.Status\Paycor.Import.Status.dll">
+      <Output
+				TaskParameter="Assemblies"
+				ItemName="StatusIdentity"/>
+    </GetAssemblyIdentity>
+    <Message Text="AssemblyVersion = %(StatusIdentity.Version)" />
+  
+    <GetAssemblyIdentity AssemblyFiles="..\..\bin\Paycor.Import.Registration.Client\Paycor.Import.Registration.Client.dll">
+      <Output
+        TaskParameter="Assemblies"
+        ItemName="RegistrationIdentity" />
+    </GetAssemblyIdentity>
+    <Message Text="AssemblyVersion = %(RegistrationIdentity.Version)" />
+
+    <GetAssemblyIdentity AssemblyFiles="..\..\bin\Paycor.Import.Messaging\Paycor.Import.Messaging.dll">
+      <Output
+				TaskParameter="Assemblies"
+				ItemName="MessageIdentity"/>
+    </GetAssemblyIdentity>
+    <Message Text="AssemblyVersion = %(MessageIdentity.Version)" />
+  </Target>
+ 
+  <Target Name="NuGetPack" DependsOnTargets="GetInfo">
+    <Exec Command = "nuget.exe pack Paycor.Import.Status.nuspec -version %(StatusIdentity.Version)" />
+    <Exec Command = "nuget.exe pack Paycor.Import.Registration.Client.nuspec -version %(RegistrationIdentity.Version)" />
+    <Exec Command = "nuget.exe pack Paycor.Import.Messaging.nuspec -version %(MessageIdentity.Version)" />
+  </Target>
+  
+  <Target Name="NuGetPush" DependsOnTargets="NuGetPack">
+    <Exec Command = "nuget.exe push *.nupkg D8A6CD0E-B139-43D3-B3A9-B0DFCCDA318B  -s http://nuget.paycor.com" />
+  </Target>
+
+</Project>

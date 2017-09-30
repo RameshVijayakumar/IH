@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Paycor.Import.Service</name>
+    </assembly>
+    <members>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.Get(System.Boolean)">
+            <summary>
+            Returns the list of client mappings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.Get(System.String)">
+            <summary>
+            Returns the specified client mapping.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.Post(Paycor.Import.Mapping.ClientMapping)">
+            <summary>
+            Saves the specified client mapping.
+            </summary>
+            <param name="mapping">Takes UserMapping as input.</param>
+            <returns>Status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.Post(Paycor.Import.Mapping.CloneClientMapping)">
+            <summary>
+            Clones the specified client mapping.
+            </summary>
+            <param name="cloneClientMapping">Takes CloneClientMapping as input.</param>
+            <returns>Status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.Put(System.String,Paycor.Import.Mapping.ClientMapping)">
+            <summary>
+            Updates the specified client mapping.
+            </summary>
+            <param name="id">The id of the mapping to update.</param>
+            <param name="mapping">Takes mapping as input.</param>
+            <returns>status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.Delete(System.String)">
+            <summary>
+            Deletes the specified client mapping.
+            </summary>
+            <param name="id">the id of the mapping to delete</param>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.ClientMappingController.GetClientMaps(System.String)">
+            <summary>
+            Gets all the maps for the specified user.
+            </summary>
+            <param name="clientId">the userkey of the user</param>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.GlobalMappingController.Get">
+            <summary>
+            Returns the list of global mappings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.GlobalMappingController.Get(System.String)">
+            <summary>
+            Returns the specified global mapping
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.GlobalMappingController.Post(Paycor.Import.Mapping.GlobalMapping)">
+            <summary>
+            Saves the specified global mapping.
+            </summary>
+            <param name="mapping">Takes GlobalMapping as input.</param>
+            <returns>Status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.GlobalMappingController.Put(System.String,Paycor.Import.Mapping.GlobalMapping)">
+            <summary>
+            Updates the specified global mapping.
+            </summary>
+            <param name="id">The id of the mapping to update.</param>
+            <param name="mapping">Takes mapping as input.</param>
+            <returns>status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.GlobalMappingController.Delete(System.String)">
+            <summary>
+            Deletes the specified global mapping.
+            </summary>
+            <param name="id">the id of the mapping to delete</param>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.Get(System.Boolean)">
+            <summary>
+            Returns the list of user mappings for the current user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.Get(System.String)">
+            <summary>
+            Returns the specified user mapping.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.Post(Paycor.Import.Mapping.UserMapping)">
+            <summary>
+            Saves the specified user mapping.
+            </summary>
+            <param name="mapping">Takes UserMapping as input.</param>
+            <returns>Status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.Clone(Paycor.Import.Mapping.CloneUserMapping)">
+            <summary>
+            Clones the specified user mapping.
+            </summary>
+            <param name="mapping">Takes CloneUserMapping as input.</param>
+            <returns>Status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.Put(System.String,Paycor.Import.Mapping.UserMapping)">
+            <summary>
+            Updates the specified user mapping.
+            </summary>
+            <param name="id">The id of the mapping to update.</param>
+            <param name="mapping">Takes mapping as input.</param>
+            <returns>status code with message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.Delete(System.String)">
+            <summary>
+            Deletes the specified user mapping.
+            </summary>
+            <param name="id">the id of the mapping to delete</param>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.UserMappingController.GetUserMaps(System.String)">
+            <summary>
+            Gets all the maps for the specified user.
+            </summary>
+            <param name="userkey">the userkey of the user</param>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.MappingCertificationController.Get(System.String)">
+            <summary>
+            Used to certify the mapping. 
+            </summary>
+            <param name="docUrl">Swagger DocUrl</param>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.RegisteredMappingController.Get">
+            <summary>
+            Gets all mappings that have been registered (a.k.a. "generated") with ImportHub.
+            </summary>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.Unversioned.RegisteredMappingController.Post">
+            <summary>
+            Sends a request to re-register maps with ImportHub with the provided docUrl sent
+            as a querystring parameter.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Paycor.Import.Service.Controllers.v1.MappingController">
+            <summary>
+            A controller for processing uploaded file.
+            </summary>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.MappingController.Get(System.String)">
+            <summary>
+            Gets the specified mapping. This operation has an additional side effect of
+            validating the returned mapping against all registered APIs to determine validity.
+            </summary>
+            <param name="id">The Id of the saved custom map.</param>
+            <returns>GeneratedMapping</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.MappingController.ConvertMap(Paycor.Import.Mapping.ConvertMapInfo)">
+            <summary>
+            Converts the list of mapping. 
+            </summary>
+            <param name="mapinfo">Info for maps to be Converted. Valid Values for currentMapType and convertToMapType is Global,Client,User</param>
+            <returns>GeneratedMapping</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.MappingController.Delete(Paycor.Import.Mapping.DeleteMapInfo)">
+            <summary>
+            Deletes the list of mapping. 
+            </summary>
+            <param name="mapinfo">Info for maps to be deleted. Valid Values for MapType is Global,Client,User</param>
+            <returns>GeneratedMapping</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.MappingController.Get(System.Boolean)">
+            <summary>
+            Gets all mappings for the current user.
+            </summary>
+            <param name="registeredMaps">True or False based on whether registered maps are needed or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.MappingController.GetTemplate(System.String,System.String)">
+            <summary>
+            Gets the template for the mapping selected in Import Hub, either in csv or xlsx format.
+            The file will be named in the below format
+            MappingName_Template.csv or MappingName_Template.xlsx
+            </summary>
+            <param name="id">The mapping id of the map.</param>
+            <param name="formatType">csv or xlsx. Valid Values are .csv and .xlsx</param>
+            that will be returned, otherwise the current server time will be appended to the filename.
+            <returns>returns template of selected map.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.MappingController.GetMapAudit(System.String)">
+            <summary>
+            Returns the map activity of what ever happend to the map.
+            </summary>
+            <param name="mappingName">The map name</param>
+            <returns>returns all the audit info for specified map.</returns>
+        </member>
+        <member name="T:Paycor.Import.Service.Controllers.v1.FilesController">
+            <summary>
+            A controller for processing uploaded file.
+            </summary>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.#ctor(log4net.ILog,Paycor.Import.Mapping.IFieldMapper,Paycor.Import.ImportHistory.IImportHistoryService,Paycor.Import.FailedRecordFormatter.IExcelToCsv,Paycor.Import.Validator.IValidator{Paycor.Import.Mapping.ApiMapping},Paycor.Import.FileDataExtracter.LegacyShim.IProvideSheetData)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="log">log for logging purpose.</param>
+            <param name="fieldMapper">To get or find the APIMapping and Mapping Definations.</param>
+            <param name="importHistoryService">Keeps track of import history, gets import history by user and returns failed records based on each file imported.</param>
+            <param name="excelToCsv">Converts Xlsx to CSV bytes</param>
+            <param name="validator">Validates Mapping Definition</param>
+            <param name="provideSheetData">sheet data provider</param>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.Post">
+            <summary>
+            Uploads a file along with the selected mappings into the import hub as multipart form data. Note: This post
+            only supports data sent as MIME multipart content. 
+            </summary>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.Post(Paycor.Import.Mapping.GeneratedMapping)">
+            <summary>
+            Provides a means to test validation of the mapping which is provided as part of a multipart post 
+            on the files endpoint. Note: This endpoint should not be called by any applications.
+            </summary>
+            <param name="mapping">the mapping to validate</param>
+            <returns>OK, if validation passes; otherwise, internal server error.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.Post(Paycor.Import.FileType.FileTypeInfo,System.Web.HttpPostedFile)">
+            <summary>
+            Do not use this route. It exists to document the arguments of the multipart post for files.
+            </summary>
+            <param name="fileTypeMappingInfo">the type of file uploaded and its associated mapping selected by the user in order to call the selected mapping API.</param>
+            <param name="file">the filestream to upload to the server.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.Get(System.String,System.Boolean)">
+            <summary>
+            Gets the import status of the imported file.
+            </summary>
+            <param name="id">The Import Id for the import file.</param>
+            <param name="statusDetails">Indicates if statusdetails need to be removed from the importstatus json</param>
+            <returns>Returns the status message.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.GetFailedRows(System.String,System.String,System.String)">
+            <summary>
+            Gets the failed rows for the file imported in Import Hub, either in csv or xlsx format.
+            The file will be named in the below format
+            ImportType_UploadedFileName_DateTime.csv or ImportType_UploadedFileName_DateTime.xlsx
+            </summary>
+            <param name="id">The import id of the file.</param>        
+            <param name="formatType">csv or xlsx. Valid Values are .csv and .xlsx</param>
+            <param name="dateTime">The current date time, if passed in will be appended to the FileName 
+            that will be returned, otherwise the current server time will be appended to the filename.
+            </param>
+            <returns>returns all the failed rows.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.FilesController.Delete(System.String)">
+            <summary>
+            Cancels an import in progress. The transaction to cancel must still be in progress. If not,
+            a bad request response will be returned.
+            </summary>
+            <param name="id">the transaction id of the import to cancel</param>
+        </member>
+        <member name="T:Paycor.Import.Service.Controllers.v1.HistoryController">
+            <summary>
+            A controller for the history of imported file.
+            </summary>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.HistoryController.#ctor(log4net.ILog,Paycor.Import.ImportHistory.IImportHistoryService,Paycor.Import.Employee.ImportHistory.ILegacyCleanUp)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="log">log for logging purpose.</param>
+            <param name="importHistoryService">Keeps track of import history, gets import history by user and returns failed records based on each file imported.</param>
+            <param name="legacyCleanUp"></param>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.HistoryController.Get">
+            <summary>
+            Gets the history of imported files for the user.
+            </summary>
+            <returns>Returns the import history messages for the user.</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.HistoryController.Delete">
+            <summary>
+            Deletes the history of imported files for the user.
+            </summary>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="M:Paycor.Import.Service.Controllers.v1.HistoryController.Delete(System.String)">
+            <summary>
+            Deletes the history of imported files for the user.
+            </summary>
+            <returns><see cref="T:System.Web.Http.IHttpActionResult"/>The result of the operation</returns>
+        </member>
+        <member name="T:Paycor.Import.Service.Web.ValidationActionFilter">
+            <summary>
+            Forces model validation on all controllers.
+            </summary>
+        </member>
+        <member name="T:Paycor.Import.Service.Shared.ExceptionMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.CompatibleMappingFound">
+            <summary>
+              Looks up a localized string similar to Compatible mapping was found for uploaded file: {0} at endpoint: {1}.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.EEImportEmptyFirstLine">
+            <summary>
+              Looks up a localized string similar to First line in the file is empty/blank. Remove empty first line from file and try import again.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.ErrorOnFileUpload">
+            <summary>
+              Looks up a localized string similar to An error occurred while tring to upload an import file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FailedCsvInvalidLookup">
+            <summary>
+              Looks up a localized string similar to Invalid Lookup Key for failed csv file.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FailedCsvNoFileFoundInBlob">
+            <summary>
+              Looks up a localized string similar to No File found in the Blob for the given ID.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FailedCsvNotFound">
+            <summary>
+              Looks up a localized string similar to Unable to download the failed rows csv report.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadCsvNoClientIdField">
+            <summary>
+              Looks up a localized string similar to Uploaded {0} has no clientid field.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadCsvNoData">
+            <summary>
+              Looks up a localized string similar to Uploaded {0} has no data.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadCsvNoHeader">
+            <summary>
+              Looks up a localized string similar to Uploaded {0} has no header.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadCsvOnlyHeaderNoData">
+            <summary>
+              Looks up a localized string similar to Uploaded {0} has only header and no data.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadIntegrationException">
+            <summary>
+              Looks up a localized string similar to Could not write to data store. Please try again later..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadInternalServerException">
+            <summary>
+              Looks up a localized string similar to Unhandled exception occurred. Please try again later..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadInvalidFile">
+            <summary>
+              Looks up a localized string similar to Invalid upload file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadMissingClientId">
+            <summary>
+              Looks up a localized string similar to ClientId missing in uploaded file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadNoFilesUploaded">
+            <summary>
+              Looks up a localized string similar to You must include at least one file to upload..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadNotTabDelimited">
+            <summary>
+              Looks up a localized string similar to Uploaded file is not a tab delimited file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadParsedClientId">
+            <summary>
+              Looks up a localized string similar to Parsed ClientId = {0} from upload file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadSuccessMessage">
+            <summary>
+              Looks up a localized string similar to File uploaded as {0} to {1} and message is put on {2}..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.FileUploadUnRecognizedFormat">
+            <summary>
+              Looks up a localized string similar to Uploaded file is not in a recognized format..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.InvalidClientId">
+            <summary>
+              Looks up a localized string similar to The expected client ID is either missing or invalid..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.MissingData">
+            <summary>
+              Looks up a localized string similar to The expected data is missing..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.MissingInfoBlock">
+            <summary>
+              Looks up a localized string similar to The server requires a file type information block to be uploaded with the file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.NoCompatibleMappingFound">
+            <summary>
+              Looks up a localized string similar to No compatible mapping was found for uploaded file: {0}.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.NoMappingFound">
+            <summary>
+              Looks up a localized string similar to No mapping was supplied for the uploaded import file..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.RecognizedFormats">
+            <summary>
+              Looks up a localized string similar to Recognized formats: TXT and CSV..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.StatusMessageNotFound">
+            <summary>
+              Looks up a localized string similar to Could not find status message with id: {0}.
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.UnauthorizedAccess">
+            <summary>
+              Looks up a localized string similar to User unauthorized to consume this service..
+            </summary>
+        </member>
+        <member name="P:Paycor.Import.Service.Shared.ExceptionMessages.UserUnauthenticated">
+            <summary>
+              Looks up a localized string similar to User unauthenticated..
+            </summary>
+        </member>
+    </members>
+</doc>

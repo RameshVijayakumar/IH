@@ -1,0 +1,311 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "ImportHub.ReferenceApi.Service",
+    "description": "A reference API used for ImportHub prototyping, research and reference examples.",
+    "contact": {
+      "name": "Alan Pimm",
+      "url": "http://tempuri.org/contact",
+      "email": "apimm@paycor.com"
+    },
+    "license": {
+      "name": "A sample license",
+      "url": "http://tempuri.org/license"
+    }
+  },
+
+  "schemes": [ "http" ],
+  "paths1": {
+    "/import/referenceapi/v1/test/games": {
+      "get": {
+        "tags": [ "Game" ],
+        "summary": "Gets the list of all games in the repository.",
+        "operationId": "Game_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": { "200": { "description": "OK" } },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Game" ],
+        "summary": "Adds a new instance of Game to the repository.",
+        "operationId": "Game_PostBy_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "game",
+            "in": "body",
+            "description": "the game to add",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Game" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "201": { "description": "Created" },
+          "400": { "description": "BadRequest" }
+        },
+        "deprecated": false
+      }
+    },
+    "/import/referenceapi/v1/test/games/{id}": {
+      "get": {
+        "tags": [ "Game" ],
+        "summary": "Gets a the specified game from the repository.",
+        "operationId": "Game_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "the id of the game to retrieve",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "404": { "description": "NotFound" }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [ "Game" ],
+        "summary": "Updates the specified game in the repository.",
+        "operationId": "Game_PutBy_id_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Model.Game} to update.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "game",
+            "in": "body",
+            "description": "The updated game",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Game" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Game" ],
+        "summary": "Deletes the specified game in the repository.",
+        "operationId": "Game_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Model.Game} to delete.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "410": { "description": "Gone" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false
+      }
+    },
+    "/import/referenceapi/v1/games": {
+      "get": {
+        "tags": [ "GameEntity" ],
+        "summary": "Gets the list of all games in the repository.",
+        "operationId": "GameEntity_Get",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": { "200": { "description": "OK" } },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "GameEntity" ],
+        "summary": "Adds a new instance of Game to the repository.",
+        "operationId": "GameEntity_PostBy_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "game",
+            "in": "body",
+            "description": "the game to add",
+            "required": true,
+            "schema": { "$ref": "#/definitions/GameEntity" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "201": { "description": "Created" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false
+      }
+    },
+    "/import/referenceapi/v1/games/{id}": {
+      "get": {
+        "tags": [ "GameEntity" ],
+        "summary": "Gets a the specified game from the repository.",
+        "operationId": "GameEntity_GetBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "the id of the game to retrieve",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "404": { "description": "NotFound" }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [ "GameEntity" ],
+        "summary": "Updates the specified game in the repository.",
+        "operationId": "GameEntity_PutBy_id_game",
+        "consumes": [ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded" ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Service.Models.GameEntity} to update.",
+            "required": true,
+            "type": "string"
+          },
+          {
+           "name": "game",
+            "in": "body",
+            "description": "The updated game",
+            "required": true,
+            "schema": { "$ref": "#/definitions/GameEntity" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "GameEntity" ],
+        "summary": "Deletes the specified game in the repository.",
+        "operationId": "GameEntity_DeleteBy_id",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "identifies the instance of {ImportHub.ReferenceApi.Service.Models.GameEntity} to delete.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "410": { "description": "Gone" },
+          "500": { "description": "InternalServerError" }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Game1": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "title": { "type": "string" },
+        "genre": {
+          "format": "int32",
+          "enum": [ 0, 1, 2, 3, 4, 5, 6 ],
+          "type": "integer"
+        },
+        "publisher": { "type": "string" },
+        "rating": {
+          "format": "int32",
+          "enum": [ 1, 2, 3, 4, 5 ],
+          "type": "integer"
+        },
+        "retailPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "publishDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "Object": {
+      "type": "object",
+      "properties": { }
+    },
+    "GameEntity": {
+      "required": [ "title", "retailPrice" ],
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "The title of the game.",
+          "type1": "string"
+        },
+        "genre": {
+          "description": "The genre of the game (e.g. card, board, action, etc.).",
+          "type": "string"
+        },
+        "publisher": {
+          "description": "The company or person who published the game.",
+          "type": "string"
+        },
+        "rating": {
+          "description": "The average rating of the game as posted by game owners.",
+          "type": "string"
+        },
+        "retailPrice": {
+          "description": "The current retail price of the game.",
+          "type": "string"
+        },
+        "publishDate": {
+          "format": "date-time",
+          "description": "The date the game was published.",
+          "type": "string"
+        },
+        "partitionKey": { "type": "string" },
+        "rowKey": { "type": "string" },
+        "timestamp": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "eTag": { "type": "string" }
+      }
+    }
+  }
+
+}
+

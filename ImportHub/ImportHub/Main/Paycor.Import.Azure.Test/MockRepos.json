@@ -1,0 +1,563 @@
+﻿[
+  // generated map
+  {
+    "docUrl": "http://localhost/endpoint/swagger",
+    "id": "1",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "clientId",
+          "required": true,
+          "source": "clientId",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "lastName",
+          "required": false,
+          "source": "lastName",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "firstName",
+          "required": false,
+          "source": "firstName",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "employeeNumber",
+          "required": false,
+          "source": "employeeNumber",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "ssn",
+          "required": false,
+          "source": "ssn",
+          "sourceType": "File",
+          "type": "string"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/employees/post"
+    },
+    "systemType": "Paycor.Import.Mapping.GeneratedMapping",
+    "mappingName": "Employee",
+    "objectType": "Employee"
+
+  },
+
+  // generated map
+  {
+    "docUrl": "http://localhost/endpoint/swagger",
+    "id": "2",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.GeneratedMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "code",
+          "required": true,
+          "source": "code",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "description",
+          "required": false,
+          "source": "description",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "amount",
+          "required": false,
+          "source": "amount",
+          "sourceType": "File",
+          "type": "float"
+        },
+        {
+          "destination": "effectiveDate",
+          "required": false,
+          "source": "effectiveDate",
+          "sourceType": "File",
+          "type": "DateTime"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/deductions/post"
+    },
+    "mappingName": "Deductions",
+    "objectType": "Deductions"
+  },
+
+  // generated map
+  {
+    "docUrl": "http://localhost/endpoint/swagger",
+    "id": "3",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.GeneratedMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "title",
+          "required": false,
+          "source": "title",
+          "sourceType": "File",
+          "type": "int"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/jobtitles/post"
+    },
+    "mappingName": "Job Title",
+    "objectType": "Job Title"
+  },
+
+  // generated map
+  {
+    "docUrl": "http://localhost/endpoint/swagger",
+    "id": "4",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.GeneratedMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "abc",
+          "required": false,
+          "source": "abc",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "def",
+          "required": false,
+          "source": "def",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "ghi",
+          "required": false,
+          "source": "ghi",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "jkl",
+          "required": false,
+          "source": "jkl",
+          "sourceType": "File",
+          "type": "string"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/bogus/post"
+    },
+    "mappingName": "Bogus",
+    "objectType": "Bogus"
+  },
+
+  // global map
+  {
+    "id": "10",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.GlobalMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "clientId",
+          "required": true,
+          "source": "clientId",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "lastName",
+          "required": false,
+          "source": "surName",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "firstName",
+          "required": false,
+          "source": "givenName",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "employeeNumber",
+          "required": false,
+          "source": "empId",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "ssn",
+          "required": false,
+          "source": "SocialSecurityNumber",
+          "sourceType": "File",
+          "type": "string"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/employees/post"
+    },
+    "mappingName": "Modified Employee Global",
+    "objectType": "Employee"
+  },
+
+  // global map
+  {
+    "id": "20",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.GlobalMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "code",
+          "required": true,
+          "source": "deductionCode",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "description",
+          "required": false,
+          "source": "description",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "amount",
+          "required": false,
+          "source": "deduction",
+          "sourceType": "File",
+          "type": "float"
+        },
+        {
+          "destination": "effectiveDate",
+          "required": false,
+          "source": "dateOfChange",
+          "sourceType": "File",
+          "type": "DateTime"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/deductions/post"
+    },
+    "mappingName": "Modified Deductions Global",
+    "objectType": "Deductions"
+  },
+
+  // global map
+  {
+    "id": "30",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.GlobalMapping",
+    "hasheader": false,
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "0",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "title",
+          "required": false,
+          "source": "1",
+          "sourceType": "File",
+          "type": "int"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/jobtitles/post"
+    },
+    "mappingName": "Job Title",
+    "objectType": "Job Title"
+  },
+
+  // user map
+  {
+    "id": "100",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.UserMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "clientId",
+          "required": true,
+          "source": "clientId",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "lastName",
+          "required": false,
+          "source": "Last",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "firstName",
+          "required": false,
+          "source": "First",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "employeeNumber",
+          "required": false,
+          "source": "EmpId",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "ssn",
+          "required": false,
+          "source": "SocialSecurity",
+          "sourceType": "File",
+          "type": "string"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/employees/post"
+    },
+    "mappingName": "Modified Employee User 1",
+    "objectType": "Employee",
+    "user": "11111111-1111-1111-1111-000000000000"
+  },
+
+  // user map
+  {
+    "id": "200",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.UserMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "code",
+          "required": true,
+          "source": "code",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "description",
+          "required": false,
+          "source": "description",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "amount",
+          "required": false,
+          "source": "deduction",
+          "sourceType": "File",
+          "type": "float"
+        },
+        {
+          "destination": "effectiveDate",
+          "required": false,
+          "source": "startsOn",
+          "sourceType": "File",
+          "type": "DateTime"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/deductions/post"
+    },
+    "mappingName": "Modified Deductions User 1",
+    "objectType": "Deductions",
+    "user": "11111111-1111-1111-1111-000000000000"
+  },
+
+  // user map
+  {
+    "id": "100",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.UserMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "clientId",
+          "required": true,
+          "source": "client",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "lastName",
+          "required": false,
+          "source": "last",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "firstName",
+          "required": false,
+          "source": "first",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "employeeNumber",
+          "required": false,
+          "source": "eid",
+          "sourceType": "File",
+          "type": "int"
+        },
+        {
+          "destination": "ssn",
+          "required": false,
+          "source": "ss#",
+          "sourceType": "File",
+          "type": "string"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/employees/post"
+    },
+    "mappingName": "Modified Employee User 0",
+    "objectType": "Employee",
+    "user": "00000000-0000-0000-0000-000000000000"
+  },
+
+  // user map
+  {
+    "id": "200",
+    "isBatchSupported": false,
+    "isMappingValid": true,
+    "systemType": "Paycor.Import.Mapping.UserMapping",
+    "mapping": {
+      "fieldDefinitions": [
+        {
+          "destination": "id",
+          "required": false,
+          "source": "id",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "code",
+          "required": true,
+          "source": "dedcode",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "description",
+          "required": false,
+          "source": "description",
+          "sourceType": "File",
+          "type": "string"
+        },
+        {
+          "destination": "amount",
+          "required": false,
+          "source": "amount",
+          "sourceType": "File",
+          "type": "float"
+        },
+        {
+          "destination": "effectiveDate",
+          "required": false,
+          "source": "begins",
+          "sourceType": "File",
+          "type": "DateTime"
+        }
+      ]
+    },
+    "mappingEndpoints": {
+      "post": "http://localhost/endpoint/deductions/post"
+    },
+    "mappingName": "Modified Deductions User 0",
+    "objectType": "Deductions",
+    "user": "00000000-0000-0000-0000-000000000000"
+  }
+
+]

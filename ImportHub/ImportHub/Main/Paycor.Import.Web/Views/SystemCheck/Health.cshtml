@@ -1,0 +1,15 @@
+﻿@model Paycor.Import.Web.Models.HealthCheckModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="margin-left:10px">
+    @foreach (var x in Model.Environment)
+    {
+        <h2>@x.Name</h2>
+        <p>@x.Result</p>
+        <p>@x.CurrentSetting</p>
+        <p>@x.AdditionalInformation</p>
+    }
+</div>

@@ -1,0 +1,341 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Service", "Paycor.Import.Service\Paycor.Import.Service.csproj", "{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{804974B9-FE00-4593-80CF-3043277F8DAA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".deploy", ".deploy", "{C4CF0541-9498-491C-942F-9A15283DC917}"
+	ProjectSection(SolutionItems) = preProject
+		.deploy\AutoDeploy.csproj = .deploy\AutoDeploy.csproj
+		.deploy\AutoDeployComponents.csproj = .deploy\AutoDeployComponents.csproj
+		.deploy\NuGet.exe = .deploy\NuGet.exe
+		.deploy\Octo.exe = .deploy\Octo.exe
+		.deploy\Octo.exe.config = .deploy\Octo.exe.config
+		.deploy\Paycor.Import.Messaging.nuspec = .deploy\Paycor.Import.Messaging.nuspec
+		.deploy\Paycor.Import.Processor.nuspec = .deploy\Paycor.Import.Processor.nuspec
+		.deploy\Paycor.Import.Processor.readme.txt = .deploy\Paycor.Import.Processor.readme.txt
+		.deploy\Paycor.Import.Registration.Client.nuspec = .deploy\Paycor.Import.Registration.Client.nuspec
+		.deploy\Paycor.Import.Status.nuspec = .deploy\Paycor.Import.Status.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeImportWorker", "EmployeeImportWorker\EmployeeImportWorker.csproj", "{F70496AD-4FAD-43DC-B3EE-E1409D666043}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8BD2047A-6A7D-4AAA-B097-B203B55FC559}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{81056B12-95E0-43CD-827D-3E9F5345683F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Status", "Paycor.Import.Status\Paycor.Import.Status.csproj", "{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeImportWorker.Test", "EmployeeImportWorker.Test\EmployeeImportWorker.Test.csproj", "{9B4952A0-F90C-4896-9349-CE397AAF4508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Status.Azure", "Paycor.Import.Status.Azure\Paycor.Import.Status.Azure.csproj", "{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Status.Tests", "Paycor.Import.Status.Tests\Paycor.Import.Status.Tests.csproj", "{047CDB65-4F53-4F9E-AF87-8C644378B6A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Employee", "Paycor.Import.Employee\Paycor.Import.Employee.csproj", "{7C02790F-95E5-46E8-92FB-BE26BADC4929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Employee.Tests", "Paycor.Import.Employee.Tests\Paycor.Import.Employee.Tests.csproj", "{2A956C63-D412-40B0-AF09-B6ABA8B055EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import", "Paycor.Import\Paycor.Import.csproj", "{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Tests", "Paycor.Import.Tests\Paycor.Import.Tests.csproj", "{94C281DD-CB1E-4377-97E7-54890B150441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Registration", "Paycor.Import.Registration\Paycor.Import.Registration.csproj", "{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Registration.Tests", "Paycor.Import.Registration.Tests\Paycor.Import.Registration.Tests.csproj", "{59EAD47B-708A-4013-97B4-9161AB5F9584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebJob", "WebJob", "{FC94919D-8368-4964-9EDD-888FE0388370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceRegistrationWorker", "ServiceRegistrationWorker\ServiceRegistrationWorker.csproj", "{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Azure", "Paycor.Import.Azure\Paycor.Import.Azure.csproj", "{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Registration.Client", "Paycor.Import.Registration.Client\Paycor.Import.Registration.Client.csproj", "{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Service.Tests", "Paycor.Import.Service.Tests\Paycor.Import.Service.Tests.csproj", "{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Paycor.Import.Processor", "Paycor.Import.Processor", "{39D0D587-3D40-478B-9EAE-F5378DEF6B20}"
+	ProjectSection(SolutionItems) = preProject
+		.deploy\Paycor.Import.Processor.nuspec = .deploy\Paycor.Import.Processor.nuspec
+		.deploy\Paycor.Import.Processor.readme.txt = .deploy\Paycor.Import.Processor.readme.txt
+		.deploy\Paycor.Import.Processor\Web.config = .deploy\Paycor.Import.Processor\Web.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Azure.Test", "Paycor.Import.Azure.Test\Paycor.Import.Azure.Test.csproj", "{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.Messaging", "Paycor.Import.Messaging\Paycor.Import.Messaging.csproj", "{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappedFileImportProcessor", "MappedFileImportProcessor\MappedFileImportProcessor.csproj", "{DB1F599F-AA7D-41E0-9563-B174589D0FBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.MapFileImport", "Paycor.Import.MapFileImport\Paycor.Import.MapFileImport.csproj", "{68D9B597-69C6-498C-8E66-9C1802C52E0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.MapFileImport.Implementation", "Paycor.Import.MapFileImport.Implementation\Paycor.Import.MapFileImport.Implementation.csproj", "{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycor.Import.MapFileImport.Implementation.Tests", "Paycor.Import.MapFileImport.Implementation.Tests\Paycor.Import.MapFileImport.Implementation.Tests.csproj", "{53A99B5F-0C6F-419E-975A-17E6972C4900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportEventReceiverLogger", "ImportEventReceiverLogger\ImportEventReceiverLogger.csproj", "{8E314104-AF06-4C6F-B355-1AF5D6AD2486}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}.QA|Any CPU.Build.0 = Release|Any CPU
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043}.QA|Any CPU.Build.0 = Release|Any CPU
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}.QA|Any CPU.Build.0 = Release|Any CPU
+		{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F29F2E-5905-46F1-ABF0-D8F7A40248D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4952A0-F90C-4896-9349-CE397AAF4508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4952A0-F90C-4896-9349-CE397AAF4508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4952A0-F90C-4896-9349-CE397AAF4508}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4952A0-F90C-4896-9349-CE397AAF4508}.QA|Any CPU.Build.0 = Release|Any CPU
+		{9B4952A0-F90C-4896-9349-CE397AAF4508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4952A0-F90C-4896-9349-CE397AAF4508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}.QA|Any CPU.Build.0 = Release|Any CPU
+		{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC336FF-65A7-41A9-B53C-0F9DF966C87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4}.QA|Any CPU.Build.0 = Release|Any CPU
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C02790F-95E5-46E8-92FB-BE26BADC4929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C02790F-95E5-46E8-92FB-BE26BADC4929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C02790F-95E5-46E8-92FB-BE26BADC4929}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{7C02790F-95E5-46E8-92FB-BE26BADC4929}.QA|Any CPU.Build.0 = QA|Any CPU
+		{7C02790F-95E5-46E8-92FB-BE26BADC4929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C02790F-95E5-46E8-92FB-BE26BADC4929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE}.QA|Any CPU.Build.0 = Release|Any CPU
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}.QA|Any CPU.Build.0 = Release|Any CPU
+		{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A375E5F1-6310-4D90-B8ED-B5CC0BAEE667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C281DD-CB1E-4377-97E7-54890B150441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C281DD-CB1E-4377-97E7-54890B150441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C281DD-CB1E-4377-97E7-54890B150441}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{94C281DD-CB1E-4377-97E7-54890B150441}.QA|Any CPU.Build.0 = Release|Any CPU
+		{94C281DD-CB1E-4377-97E7-54890B150441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C281DD-CB1E-4377-97E7-54890B150441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}.QA|Any CPU.Build.0 = Release|Any CPU
+		{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FE7ADE-61EF-4DC6-8B9C-1D83CDE0F382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EAD47B-708A-4013-97B4-9161AB5F9584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EAD47B-708A-4013-97B4-9161AB5F9584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EAD47B-708A-4013-97B4-9161AB5F9584}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{59EAD47B-708A-4013-97B4-9161AB5F9584}.QA|Any CPU.Build.0 = Release|Any CPU
+		{59EAD47B-708A-4013-97B4-9161AB5F9584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EAD47B-708A-4013-97B4-9161AB5F9584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}.QA|Any CPU.Build.0 = Release|Any CPU
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}.QA|Any CPU.Build.0 = Release|Any CPU
+		{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1D75AF-A3F0-4824-8787-16B03B0B49D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}.QA|Any CPU.Build.0 = Release|Any CPU
+		{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596391E0-5F2D-4EE7-A9C9-073C16BB9D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}.QA|Any CPU.Build.0 = Release|Any CPU
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}.QA|Any CPU.Build.0 = Release|Any CPU
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}.QA|Any CPU.Build.0 = Release|Any CPU
+		{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8467B76C-B412-4F2F-B6DD-9E8DF7B6B820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB}.QA|Any CPU.Build.0 = Release|Any CPU
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D9B597-69C6-498C-8E66-9C1802C52E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D9B597-69C6-498C-8E66-9C1802C52E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D9B597-69C6-498C-8E66-9C1802C52E0E}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{68D9B597-69C6-498C-8E66-9C1802C52E0E}.QA|Any CPU.Build.0 = Release|Any CPU
+		{68D9B597-69C6-498C-8E66-9C1802C52E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D9B597-69C6-498C-8E66-9C1802C52E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}.QA|Any CPU.Build.0 = Release|Any CPU
+		{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF94AD7-1EE6-40EA-AE69-04145798AFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53A99B5F-0C6F-419E-975A-17E6972C4900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A99B5F-0C6F-419E-975A-17E6972C4900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A99B5F-0C6F-419E-975A-17E6972C4900}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{53A99B5F-0C6F-419E-975A-17E6972C4900}.QA|Any CPU.Build.0 = Release|Any CPU
+		{53A99B5F-0C6F-419E-975A-17E6972C4900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A99B5F-0C6F-419E-975A-17E6972C4900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486}.QA|Any CPU.Build.0 = Release|Any CPU
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD5C0320-6792-4DE5-B45F-59EC48C9CF27} = {81056B12-95E0-43CD-827D-3E9F5345683F}
+		{F70496AD-4FAD-43DC-B3EE-E1409D666043} = {FC94919D-8368-4964-9EDD-888FE0388370}
+		{9B4952A0-F90C-4896-9349-CE397AAF4508} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{047CDB65-4F53-4F9E-AF87-8C644378B6A4} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{2A956C63-D412-40B0-AF09-B6ABA8B055EE} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{94C281DD-CB1E-4377-97E7-54890B150441} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{59EAD47B-708A-4013-97B4-9161AB5F9584} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{89C2C1CB-F325-41DD-A82D-EA9D9ECE6221} = {FC94919D-8368-4964-9EDD-888FE0388370}
+		{19A5FB54-5A77-415A-A5A2-68A3F6BAC4FB} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{0CDB3CBF-16C0-4C59-9177-278DBB8297E9} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{DB1F599F-AA7D-41E0-9563-B174589D0FBB} = {FC94919D-8368-4964-9EDD-888FE0388370}
+		{53A99B5F-0C6F-419E-975A-17E6972C4900} = {8BD2047A-6A7D-4AAA-B097-B203B55FC559}
+		{8E314104-AF06-4C6F-B355-1AF5D6AD2486} = {FC94919D-8368-4964-9EDD-888FE0388370}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4;packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4;packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\DesignTime
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 24
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://cintfs02:8080/tfs/paycor
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Paycor.Import.Service\\Paycor.Import.Service.csproj
+		SccProjectTopLevelParentUniqueName1 = ImportHub.sln
+		SccProjectName1 = Paycor.Import.Service
+		SccLocalPath1 = Paycor.Import.Service
+		SccProjectUniqueName2 = EmployeeImportWorker\\EmployeeImportWorker.csproj
+		SccProjectTopLevelParentUniqueName2 = ImportHub.sln
+		SccProjectName2 = EmployeeImportWorker
+		SccLocalPath2 = EmployeeImportWorker
+		SccProjectUniqueName3 = Paycor.Import.Status\\Paycor.Import.Status.csproj
+		SccProjectName3 = Paycor.Import.Status
+		SccLocalPath3 = Paycor.Import.Status
+		SccProjectUniqueName4 = EmployeeImportWorker.Test\\EmployeeImportWorker.Test.csproj
+		SccProjectTopLevelParentUniqueName4 = ImportHub.sln
+		SccProjectName4 = EmployeeImportWorker.Test
+		SccLocalPath4 = EmployeeImportWorker.Test
+		SccProjectUniqueName5 = Paycor.Import.Status.Azure\\Paycor.Import.Status.Azure.csproj
+		SccProjectName5 = Paycor.Import.Status.Azure
+		SccLocalPath5 = Paycor.Import.Status.Azure
+		SccProjectUniqueName6 = Paycor.Import.Status.Tests\\Paycor.Import.Status.Tests.csproj
+		SccProjectTopLevelParentUniqueName6 = ImportHub.sln
+		SccProjectName6 = Paycor.Import.Status.Tests
+		SccLocalPath6 = Paycor.Import.Status.Tests
+		SccProjectUniqueName7 = Paycor.Import.Employee\\Paycor.Import.Employee.csproj
+		SccProjectName7 = Paycor.Import.Employee
+		SccLocalPath7 = Paycor.Import.Employee
+		SccProjectUniqueName8 = Paycor.Import.Employee.Tests\\Paycor.Import.Employee.Tests.csproj
+		SccProjectTopLevelParentUniqueName8 = ImportHub.sln
+		SccProjectName8 = Paycor.Import.Employee.Tests
+		SccLocalPath8 = Paycor.Import.Employee.Tests
+		SccProjectUniqueName9 = Paycor.Import\\Paycor.Import.csproj
+		SccProjectName9 = Paycor.Import
+		SccLocalPath9 = Paycor.Import
+		SccProjectUniqueName10 = Paycor.Import.Tests\\Paycor.Import.Tests.csproj
+		SccProjectTopLevelParentUniqueName10 = ImportHub.sln
+		SccProjectName10 = Paycor.Import.Tests
+		SccLocalPath10 = Paycor.Import.Tests
+		SccProjectUniqueName11 = Paycor.Import.Registration\\Paycor.Import.Registration.csproj
+		SccProjectName11 = Paycor.Import.Registration
+		SccLocalPath11 = Paycor.Import.Registration
+		SccProjectUniqueName12 = Paycor.Import.Registration.Tests\\Paycor.Import.Registration.Tests.csproj
+		SccProjectTopLevelParentUniqueName12 = ImportHub.sln
+		SccProjectName12 = Paycor.Import.Registration.Tests
+		SccLocalPath12 = Paycor.Import.Registration.Tests
+		SccProjectUniqueName13 = ServiceRegistrationWorker\\ServiceRegistrationWorker.csproj
+		SccProjectTopLevelParentUniqueName13 = ImportHub.sln
+		SccProjectName13 = ServiceRegistrationWorker
+		SccLocalPath13 = ServiceRegistrationWorker
+		SccProjectUniqueName14 = Paycor.Import.Azure\\Paycor.Import.Azure.csproj
+		SccProjectName14 = Paycor.Import.Azure
+		SccLocalPath14 = Paycor.Import.Azure
+		SccProjectUniqueName15 = Paycor.Import.Registration.Client\\Paycor.Import.Registration.Client.csproj
+		SccProjectName15 = Paycor.Import.Registration.Client
+		SccLocalPath15 = Paycor.Import.Registration.Client
+		SccProjectUniqueName16 = Paycor.Import.Service.Tests\\Paycor.Import.Service.Tests.csproj
+		SccProjectTopLevelParentUniqueName16 = ImportHub.sln
+		SccProjectName16 = Paycor.Import.Service.Tests
+		SccLocalPath16 = Paycor.Import.Service.Tests
+		SccProjectUniqueName17 = Paycor.Import.Azure.Test\\Paycor.Import.Azure.Test.csproj
+		SccProjectTopLevelParentUniqueName17 = ImportHub.sln
+		SccProjectName17 = Paycor.Import.Azure.Test
+		SccLocalPath17 = Paycor.Import.Azure.Test
+		SccProjectUniqueName18 = Paycor.Import.Messaging\\Paycor.Import.Messaging.csproj
+		SccProjectName18 = Paycor.Import.Messaging
+		SccLocalPath18 = Paycor.Import.Messaging
+		SccProjectUniqueName19 = MappedFileImportProcessor\\MappedFileImportProcessor.csproj
+		SccProjectTopLevelParentUniqueName19 = ImportHub.sln
+		SccProjectName19 = MappedFileImportProcessor
+		SccLocalPath19 = MappedFileImportProcessor
+		SccProjectUniqueName20 = Paycor.Import.MapFileImport\\Paycor.Import.MapFileImport.csproj
+		SccProjectName20 = Paycor.Import.MapFileImport
+		SccLocalPath20 = Paycor.Import.MapFileImport
+		SccProjectUniqueName21 = Paycor.Import.MapFileImport.Implementation\\Paycor.Import.MapFileImport.Implementation.csproj
+		SccProjectName21 = Paycor.Import.MapFileImport.Implementation
+		SccLocalPath21 = Paycor.Import.MapFileImport.Implementation
+		SccProjectUniqueName22 = Paycor.Import.MapFileImport.Implementation.Tests\\Paycor.Import.MapFileImport.Implementation.Tests.csproj
+		SccProjectTopLevelParentUniqueName22 = ImportHub.sln
+		SccProjectName22 = Paycor.Import.MapFileImport.Implementation.Tests
+		SccLocalPath22 = Paycor.Import.MapFileImport.Implementation.Tests
+		SccProjectUniqueName23 = ImportEventReceiverLogger\\ImportEventReceiverLogger.csproj
+		SccProjectTopLevelParentUniqueName23 = ImportHub.sln
+		SccProjectName23 = ImportEventReceiverLogger
+		SccLocalPath23 = ImportEventReceiverLogger
+	EndGlobalSection
+EndGlobal

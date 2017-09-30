@@ -1,0 +1,12 @@
+﻿[
+  {
+    "$id": "1",
+    "DriverId": 123,
+    "lastName": "r",
+    "firstName": "v",
+    "racingNumber": 0,
+    "country": "string",
+    "worldChampionships": 0,
+    "teamId": 0
+  }
+]

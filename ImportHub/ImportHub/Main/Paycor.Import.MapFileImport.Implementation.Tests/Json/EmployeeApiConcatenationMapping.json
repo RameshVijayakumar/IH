@@ -1,0 +1,179 @@
+﻿{
+  "id": "337B9565-9D05-4076-9914-2DC14497AA83",
+  "mappingName": "Concat Employee",
+  "mappingEndpoints": {
+    "post": "http://devsbqtrweb01.dev.paycor.com/employeeservice/v2/employees",
+    "put": null,
+    "delete": null,
+    "patch": "http://devsbqtrweb01.dev.paycor.com/employeeservice/v2/employees/{id}"
+  },
+  "mapping": {
+    "FieldDefinitions": [
+      {
+        "Source": "action",
+        "Destination": "ih:action",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "clientId",
+        "Destination": "clientId",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "employeeNumber",
+        "Destination": "employeeNumber",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": true,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "workPhone",
+        "Destination": "workPhone",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "employmentStatus",
+        "Destination": "employmentStatus",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "departmentCode",
+        "Destination": "departmentCode",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "employeeType",
+        "Destination": "employeeType",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "lastName",
+        "Destination": "person.lastName",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "firstName|lastName",
+        "Destination": "person.firstName",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "tobacoUser",
+        "Destination": "person.isTobaccoUser",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "mobilePhone",
+        "Destination": "person.mobilePhone",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "ssn",
+        "Destination": "person.ssn",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": null,
+        "ValuePath": null,
+        "SourceType": 0,
+        "ExceptionMessage": null,
+        "IsRequiredForPayload": false
+      },
+      {
+        "Source": "{{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}",
+        "Destination": "{id}",
+        "GlobalLookupType": null,
+        "Type": "string",
+        "Required": false,
+        "EndPoint": "http://devsbqtrweb01.dev.paycor.com/employeeservice/v2/employees?clientId={{clientId}}&employeeNumber={{employeeNumber}&objectSize=Small}",
+        "ValuePath": "id",
+        "SourceType": 0,
+        "ExceptionMessage": "Employee Not Found",
+        "IsRequiredForPayload": false
+      }
+    ]
+  },
+  "docUrl": null,
+  "user": null,
+  "isMappingValid": true,
+  "isBatchSupported": false,
+  "isBatchChunkingSupported": false,
+  "preferredBatchChunkSize": null,
+  "chunkSize": 0,
+  "objectType": "Employee",
+  "hasHeader": true
+}

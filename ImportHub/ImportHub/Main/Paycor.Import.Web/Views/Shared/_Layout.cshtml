@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="/ImportHub/Scripts/importHub.js"></script>
+    <script src="/ImportHub/App/app.js"></script>
+
+    @Html.RenderJQuery()
+    @Html.RenderBoostJavascript()
+    @Html.RenderGlobalNavigationCascadingStyleSheet()
+
+    <link rel="stylesheet" href="/ImportHub/Content/components.css" />
+    <link rel="stylesheet" href="/ImportHub/Content/style.css" />
+
+    @RenderSection("head", required: false)
+</head>
+<body>
+    @RenderSection("header", required: false)
+
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
